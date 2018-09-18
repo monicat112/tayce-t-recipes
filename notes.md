@@ -28,3 +28,9 @@ Recipe Detail Page
 
 ## Ideas
 Recipe Themes: https://www.mariowiki.com/List_of_Tayce_T._recipes
+```html
+<h1>About</h1>
+<p>I hope you enjoyed the Tayce T. recipies!</p>
+<p>This project was built with &gt;3 using Webpack, Babel, Hugo, Netlify, Gulp, postCSS, and <a href="https://surge.sh/" arget="_blank">Surge</a> for super simple hosting. If you want to take a look under the hood, <a href="#" target="_blank">here's the repo</a>.</p>
+<p>If you'd like to get in touch, tweet me @mocasalter ✌</p>
+```
