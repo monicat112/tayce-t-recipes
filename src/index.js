@@ -1,15 +1,27 @@
-import { saveRecipes, getRecipes, createDemoRecipes, createRecipe, removeRecipe } from './recipes'
+import { createRecipe, createDefaultRecipes } from './recipes'
 import { renderRecipes } from './views'
 import { setFilter } from './filters'
 
+const newRecipeBtn = document.querySelector('#create-recipe')
+const searchEl = document.querySelector('#search')
+const resetBtn = document.querySelector('#reset-recipes')
+
 renderRecipes()
 
-document.querySelector('#create-recipe').addEventListener('click', (e) => {
+newRecipeBtn.addEventListener('click', (e) => {
+    e.preventDefault()
     const id = createRecipe()
     location.assign(`/edit.html#${id}`)
 })
 
-document.querySelector('#search').addEventListener('input', (e) => {
+searchEl.addEventListener('input', (e) => {
     setFilter(e.target.value)
     renderRecipes()
 })
+
+resetBtn.addEventListener('click', (e) => {
+    e.preventDefault()
+    createDefaultRecipes()
+    renderRecipes()
+})
+

@@ -1,4 +1,5 @@
-import { getRecipes, toggleIngredient, haveIngredients, removeIngredient } from './recipes'
+import { getRecipes } from './recipes'
+import { toggleIngredient, haveIngredients, removeIngredient } from './ingredients'
 import { getFilter } from './filters'
 
 const ingretientsListEl = document.querySelector('#recipe-ingredients-list')

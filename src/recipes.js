@@ -1,4 +1,6 @@
 import uuidv4 from 'uuid/v4'
+import { Recipe } from './classes'
+import { getDefaultRecipes } from './default-recipes'
 
 // demo recipes
 let recipes = []
@@ -12,6 +14,21 @@ const loadRecipes = () => {
     }
 }
 
+const newSiteVisitor = () => {
+    let visitedJSON = localStorage.getItem('recipes-new-visitor')
+    if (!visitedJSON) {
+        localStorage.setItem('recipes-new-visitor', JSON.stringify(false))
+        return true
+    } else {
+        return false
+    }
+}
+
+const createDefaultRecipes = () => {
+    recipes = getDefaultRecipes()
+    saveRecipes()
+}
+
 const saveRecipes = () => {
     localStorage.setItem('recipes', JSON.stringify(recipes))
 }
@@ -20,25 +37,10 @@ const getRecipes = () => recipes
 
 const createRecipe = () => {
     const id = uuidv4()
-    recipes.push({
-        id: id,
-        title: '',
-        effect: '',
-        ingredients: []
-    })
+    const newRecipe = new Recipe(id, '', '', [])
+    recipes.push(newRecipe)
     saveRecipes()
     return id
-}
-
-const createIngredient = (recipeId, name) => {
-    const recipe = recipes.find(recipe => recipe.id === recipeId)
-    const id = uuidv4()
-    recipe.ingredients.push({
-        id,
-        name,
-        available: false
-    })
-    saveRecipes()
 }
 
 const removeRecipe = (id) => {
@@ -47,25 +49,6 @@ const removeRecipe = (id) => {
         recipes.splice(recipeIndex, 1)
         saveRecipes()
     }
-}
-
-const removeIngredient = (recipeId, ingredientId) => {
-    const recipeIndex = recipes.findIndex((recipe) => recipe.id === recipeId)
-    const ingredientIndex = recipes[recipeIndex].ingredients.findIndex((ingredient) => ingredient.id === ingredientId)
-    if (recipeIndex > -1 && ingredientIndex > -1)  {
-        recipes[recipeIndex].ingredients.splice(ingredientIndex, 1)
-        saveRecipes()
-    }
-}
-
-const toggleIngredient = (ingredient) => {
-    if (ingredient.available) {
-        ingredient.available = false
-    } else {
-        ingredient.available = true
-    }
-
-    saveRecipes()
 }
 
 const updateRecipe = (id, updates) => {
@@ -88,20 +71,11 @@ const updateRecipe = (id, updates) => {
     saveRecipes()
 }
 
-const haveIngredients = (recipe) => {
-    let qty = 'have some'
-    const noIngerdients = recipe.ingredients.every((ingredient) => ingredient.available === false)
-    const allIngerdients = recipe.ingredients.every((ingredient) => ingredient.available === true)
-
-    if (noIngerdients) {
-        qty = 'don\'t have any' 
-    } else if (allIngerdients) {
-        qty = 'have all'
-    }
-
-    return `You ${qty} of the ingredients`
+// If the user hasn't been to this page before, set some default recipes
+if (newSiteVisitor()) {
+    createDefaultRecipes()
 }
 
 loadRecipes()
 
-export { saveRecipes, getRecipes, createRecipe, createIngredient, removeRecipe, updateRecipe, haveIngredients, toggleIngredient, removeIngredient }
+export { saveRecipes, getRecipes, createRecipe, removeRecipe, updateRecipe, createDefaultRecipes }
