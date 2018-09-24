@@ -1,3 +1,7 @@
+Last stop: working on the ingredients list in views.js, trying to figure out how I can 
+1. Get that to re-render when a new item is added
+2. Store the checkbox data when it's changed
+
 # Paper Mario Recipes
 
 `$ npm run dev-server` to run the dev environment  

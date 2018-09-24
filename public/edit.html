@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
+    <title>Tayce T Recipes - Edit</title>
+</head>
+<body>
+    <h1>Title</h1>
+    <div>
+        <input type="text" id="recipe-title" placeholder="Recipe title"> <br><br>
+        <textarea name="effect" id="recipe-effect" cols="30" rows="3" placeholder="Effect"></textarea>
+        <div>
+            <h2>Ingredients</h2>
+            <ul id="recipe-ingredients-list"></ul>
+            <input type="text" id="recipe-ingredient">
+            <button id="create-ingredient">+1 Ingredient</button>
+        </div>
+        <div>
+            <h2>Danger Zone</h2>
+            <button id="delete-btn">Delete Recipe</button>
+        </div>
+    </div>
+
+    <script src="/scripts/edit-bundle.js"></script>
+</body>
+</html>

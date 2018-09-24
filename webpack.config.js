@@ -4,7 +4,7 @@ require('@babel/polyfill')
 module.exports = {
     entry: {
         index: ['@babel/polyfill', './src/index.js'],
-        recipe: ['@babel/polyfill', './src/recipe.js']
+        edit: ['@babel/polyfill', './src/edit.js']
     },
     output: {
         path: path.resolve(__dirname, 'public/scripts'),
