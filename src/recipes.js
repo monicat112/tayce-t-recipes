@@ -1,6 +1,6 @@
 import uuidv4 from 'uuid/v4'
 import { Recipe } from './classes'
-import { getDefaultRecipes } from './default-content'
+import { getDefaultRecipes, imageList } from './default-content'
 
 // demo recipes
 let recipes = []
@@ -37,7 +37,7 @@ const getRecipes = () => recipes
 
 const createRecipe = () => {
     const id = uuidv4()
-    const newRecipe = new Recipe(id, '', '', [])
+    const newRecipe = new Recipe(id, '', imageList[0] , '', [])
     recipes.push(newRecipe)
     saveRecipes()
     return id
@@ -59,13 +59,17 @@ const updateRecipe = (id, updates) => {
     }
 
     if (typeof updates.title === 'string') {
-        const title = document.querySelector('#recipe-title').value.trim()
+        const title = updates.title.trim()
         recipe.title = title
     }
 
     if (typeof updates.effect === 'string') {
-        const effect = document.querySelector('#recipe-effect').value.trim()
+        const effect = updates.effect.trim()
         recipe.effect = effect
+    }
+
+    if (updates.image) {
+        recipe.image = updates.image
     }
 
     saveRecipes()

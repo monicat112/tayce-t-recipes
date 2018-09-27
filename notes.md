@@ -1,7 +1,3 @@
-Last stop: see error-cause.png
-
-working in view.js, default-content.js, and classes.js trying to get the fileName() to show... it works from default-content.js but not in views.js.
-
 
 # Building a Recipe App
 

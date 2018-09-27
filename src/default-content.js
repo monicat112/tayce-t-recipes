@@ -1,29 +1,55 @@
 import uuidv4 from 'uuid/v4'
-import { Ingredient, Recipe, Image } from './classes'
+import { Ingredient, Recipe } from './classes'
 
 // Images
+// tired to build this with the Image class, but the fileName getter wasn't accessible in views.js... Once the image object was passed into a recipe, it was a plain object instead of an Image class object, so the getter wasn't available.
 const imageList = [
-    new Image('Fire Flower'),
-    new Image('Honey Shroom'),
-    new Image('Yoshi Cookie'),
-    new Image('Cake'),
-    new Image('Yummy Meal'),
-    new Image('Deluxe Feast'),
-    new Image('Tasty Tonic'),
-    new Image('Jelly Pop'),
-    new Image('Egg Missile'),
-    new Image('Mistake')
+    {
+        name: 'Yummy Meal',
+        fileName: 'yummy-meal'
+    },
+    {
+        name: 'Fire Flower',
+        fileName: 'fire-flower'
+    },
+    {
+        name: 'Honey Shroom',
+        fileName: 'honey-shroom'
+    },
+    {
+        name: 'Yoshi Cookie',
+        fileName: 'yoshi-cookie'
+    },
+    {
+        name: 'Cake',
+        fileName: 'cake'
+    },
+    {
+        name: 'Tasty Tonic',
+        fileName: 'tasty-tonic'
+    },
+    {
+        name: 'Jelly Pop',
+        fileName: 'jelly-pop'
+    },
+    {
+        name: 'Egg Missile',
+        fileName: 'egg-missile'
+    },
+    {
+        name: 'Deluxe Feast',
+        fileName: 'deluxe-feast'
+    },
+    {
+        name: 'Mistake',
+        fileName: 'mistake'
+    }
 ]
-
-// console.log('file name: ', imageList[0].fileName())
 
 // Fire Flower
 const ingredient1a = new Ingredient(uuidv4(), 'Dried Fruit', false)
 const ingredient1b = new Ingredient(uuidv4(), 'Strange Leaf', false)
 const fireFlowerImage = imageList.find((image) => image.name === 'Fire Flower')
-
-console.log('file name content: ', fireFlowerImage)
-
 const fireFlower = new Recipe(uuidv4(), 'Fire Flower', fireFlowerImage, 'Deals 3 HP of damage to all enemies. Great addition to any boquet.', [ingredient1a, ingredient1b])
 
 // Honey Shroom
@@ -42,4 +68,4 @@ const yoshiCookie = new Recipe(uuidv4(), 'Yoshi Cookie', yoshiCookieImage, 'Rest
 const defaultRecipes = [yoshiCookie, fireFlower, honeyShroom]
 const getDefaultRecipes = () => defaultRecipes
 
-export { getDefaultRecipes }
+export { getDefaultRecipes, imageList }

@@ -16,14 +16,14 @@ class Recipe {
     }
 }
 
-class Image {
-    constructor(name) {
-        this.name = name
-    }
-    fileName() {
-        const nameBase = this.name.replace(' ', '-').toLowerCase()
-        return `${nameBase}.png`
-    }
-}
+// class Image {
+//     constructor(name) {
+//         this.name = name
+//     }
+//     get fileName() {
+//         const nameBase = this.name.replace(' ', '-').toLowerCase()
+//         return `${nameBase}.png`
+//     }
+// }
 
-export { Ingredient, Recipe, Image } 
+export { Ingredient, Recipe } 

@@ -1,7 +1,7 @@
 import { getRecipes } from './recipes'
 import { toggleIngredient, haveIngredients, removeIngredient } from './ingredients'
 import { getFilter } from './filters'
-import { getDefaultRecipes } from './default-content'
+import { imageList } from './default-content'
 
 const ingretientsListEl = document.querySelector('#recipe-ingredients-list')
 
@@ -13,6 +13,10 @@ const generateRecipeCardDOM = (recipe) => {
 
     // set the link
     recipeEl.setAttribute('href', `/edit.html#${recipe.id}`)
+
+    // set the image
+    imageEl.setAttribute('src', `./images/${recipe.image.fileName}.png`)
+    recipeEl.appendChild(imageEl)
 
     // set the title
     if (recipe.title.length > 0 ) {
@@ -26,11 +30,6 @@ const generateRecipeCardDOM = (recipe) => {
     // set the ingredient text
     ingredientEl.textContent = haveIngredients(recipe)
     recipeEl.appendChild(ingredientEl)
-
-    // set the image
-    // imageEl.setAttribute('src', recipe.image.fileName())
-    console.log('file name views: ', recipe.image)
-    // recipeEl.appendChild(imageEl)
 
     return recipeEl
 }
@@ -71,6 +70,8 @@ const renderIngredients = (recipeId) => {
 const initializeEditPage = (recipeId) => {
     const titleEl = document.querySelector('#recipe-title')
     const effectEl = document.querySelector('#recipe-effect')
+    const imageEl = document.querySelector('#image')
+    const imageSelectEl = document.querySelector('#image-select')
 
     // find the individual recipe
     const recipes = getRecipes()
@@ -85,6 +86,25 @@ const initializeEditPage = (recipeId) => {
     titleEl.value = recipe.title
     effectEl.value = recipe.effect
     renderIngredients(recipeId)
+
+    // create the image select
+    let itemSelected = false
+    imageList.forEach((image) => {
+        const selectOption = document.createElement('option')
+        selectOption.setAttribute('value', image.fileName)
+        selectOption.textContent = image.name
+        if (image.name === recipe.image.name) {
+            selectOption.setAttribute('selected', true)
+            itemSelected = true
+        }
+        imageSelectEl.appendChild(selectOption)
+    })
+    if (!itemSelected) {
+        imageSelectEl.childNodes[1].setAttribute('selected', true)
+    }
+
+    imageEl.setAttribute('src', `./images/${recipe.image.fileName}-lg.png`)
+
     //renderImagePicker()
     // const select = document.createElement('select')
     // for each image, create an 'option' element
