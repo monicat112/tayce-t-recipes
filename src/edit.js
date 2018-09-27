@@ -8,7 +8,6 @@ const effectEl = document.querySelector('#recipe-effect')
 const ingredientBtn = document.querySelector('#create-ingredient')
 const deleteBtn = document.querySelector('#delete-btn')
 
-removeRecipe('d1de7874-2c88-46a8-b545-247e1d963111')
 initializeEditPage(recipeId)
 
 titleEl.addEventListener('input', (e) => {

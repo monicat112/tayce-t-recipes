@@ -1,6 +1,6 @@
 import uuidv4 from 'uuid/v4'
 import { Recipe } from './classes'
-import { getDefaultRecipes } from './default-recipes'
+import { getDefaultRecipes } from './default-content'
 
 // demo recipes
 let recipes = []
