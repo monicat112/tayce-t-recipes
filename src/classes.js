@@ -7,11 +7,10 @@ class Ingredient {
 }
 
 class Recipe {
-    constructor(id, title, effect, ingredients=[]) {
-    // constructor(id, title, image, effect, ingredients=[]) {
+    constructor(id, title, image, effect, ingredients=[]) {
         this.id = id
         this.title = title
-        // this.image = image
+        this.image = image
         this.effect = effect
         this.ingredients = ingredients
     }
@@ -21,16 +20,9 @@ class Image {
     constructor(name) {
         this.name = name
     }
-    fileNameBase() {
-        return this.name.replace(' ', '-').toLowerCase()
-    }
-    get fileName () {
-        const newName = this.fileNameBase()
-        return `${newName}.png`
-    }
-    get fileName3x () {
-        const newName = this.fileNameBase()
-        return `${newName}_3x.png`
+    fileName() {
+        const nameBase = this.name.replace(' ', '-').toLowerCase()
+        return `${nameBase}.png`
     }
 }
 

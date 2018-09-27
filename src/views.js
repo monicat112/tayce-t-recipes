@@ -1,6 +1,7 @@
 import { getRecipes } from './recipes'
 import { toggleIngredient, haveIngredients, removeIngredient } from './ingredients'
 import { getFilter } from './filters'
+import { getDefaultRecipes } from './default-content'
 
 const ingretientsListEl = document.querySelector('#recipe-ingredients-list')
 
@@ -8,6 +9,7 @@ const generateRecipeCardDOM = (recipe) => {
     const recipeEl = document.createElement('a')
     const titleEl = document.createElement('h2')
     const ingredientEl = document.createElement('p')
+    const imageEl = document.createElement('img')
 
     // set the link
     recipeEl.setAttribute('href', `/edit.html#${recipe.id}`)
@@ -24,6 +26,11 @@ const generateRecipeCardDOM = (recipe) => {
     // set the ingredient text
     ingredientEl.textContent = haveIngredients(recipe)
     recipeEl.appendChild(ingredientEl)
+
+    // set the image
+    // imageEl.setAttribute('src', recipe.image.fileName())
+    console.log('file name views: ', recipe.image)
+    // recipeEl.appendChild(imageEl)
 
     return recipeEl
 }
@@ -78,6 +85,9 @@ const initializeEditPage = (recipeId) => {
     titleEl.value = recipe.title
     effectEl.value = recipe.effect
     renderIngredients(recipeId)
+    //renderImagePicker()
+    // const select = document.createElement('select')
+    // for each image, create an 'option' element
 }
 
 const initializeIngredient = (recipeId, ingredient) => {
