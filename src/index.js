@@ -1,5 +1,5 @@
 import { createRecipe, createDefaultRecipes } from './recipes'
-import { renderRecipes, runDialogue } from './views'
+import { renderRecipes, runDialogue, stop } from './views'
 import { setFilter } from './filters'
 
 const dialogueBtn = document.getElementById('dialogue-btn')
@@ -31,4 +31,3 @@ resetBtn.addEventListener('click', (e) => {
     createDefaultRecipes()
     renderRecipes()
 })
-

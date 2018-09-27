@@ -4,7 +4,7 @@ import { getFilter } from './filters'
 import { imageList, tayceTDialogue } from './default-content'
 
 const ingretientsListEl = document.getElementById('recipe-ingredients-list')
-let dialogueCount = 3
+let dialogueCount = 0
 
 const generateRecipeCardDOM = (recipe) => {
     const recipeEl = document.createElement('a')
@@ -83,9 +83,10 @@ const initializeEditPage = (recipeId) => {
         location.assign('/')
     }
 
-    // set all the values
+    // set values
     titleEl.value = recipe.title
     effectEl.value = recipe.effect
+    imageEl.setAttribute('src', `./images/${recipe.image.fileName}-lg.png`)
     renderIngredients(recipeId)
 
     // create the image select
@@ -104,11 +105,6 @@ const initializeEditPage = (recipeId) => {
         imageSelectEl.childNodes[1].setAttribute('selected', true)
     }
 
-    imageEl.setAttribute('src', `./images/${recipe.image.fileName}-lg.png`)
-
-    //renderImagePicker()
-    // const select = document.createElement('select')
-    // for each image, create an 'option' element
 }
 
 const initializeIngredient = (recipeId, ingredient) => {
@@ -150,6 +146,11 @@ const initializeIngredient = (recipeId, ingredient) => {
 
 const runDialogue = () => {
     const element = document.getElementById('dialogue')
+    const dialogueBtn = document.getElementById('dialogue-btn')
+
+    if (dialogueCount == 0) {
+        dialogueBtn.textContent = 'run dialogue'
+    }
 
     const callback = (text) => {
         element.textContent = text
@@ -158,7 +159,7 @@ const runDialogue = () => {
     const options = {
         typeSpeed: 30,
         deleteSpeed: 1,
-        pauseDuration: 300,
+        pauseDuration: 250,
         repeat: false
     }
 
@@ -183,7 +184,8 @@ const runDialogue = () => {
 
     if (dialogueCount >= Object.keys(tayceTDialogue).length) {
         dialogueCount = 0
+        dialogueBtn.textContent = 'restart'
     }
 }
 
-export { renderRecipes, renderIngredients, initializeEditPage, runDialogue }
+export { renderRecipes, renderIngredients, initializeEditPage, runDialogue, stop }
