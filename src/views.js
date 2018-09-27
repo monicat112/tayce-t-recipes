@@ -1,9 +1,10 @@
 import { getRecipes } from './recipes'
 import { toggleIngredient, haveIngredients, removeIngredient } from './ingredients'
 import { getFilter } from './filters'
-import { imageList } from './default-content'
+import { imageList, tayceTDialogue } from './default-content'
 
-const ingretientsListEl = document.querySelector('#recipe-ingredients-list')
+const ingretientsListEl = document.getElementById('recipe-ingredients-list')
+let dialogueCount = 3
 
 const generateRecipeCardDOM = (recipe) => {
     const recipeEl = document.createElement('a')
@@ -22,7 +23,7 @@ const generateRecipeCardDOM = (recipe) => {
     if (recipe.title.length > 0 ) {
         titleEl.textContent = recipe.title
     } else {
-        titleEl.textContent = '[untitled recipe]'
+        titleEl.textContent = '[Untitled Recipe]'
     }
     titleEl.classList.add('recipe-card__title')
     recipeEl.appendChild(titleEl)
@@ -35,7 +36,7 @@ const generateRecipeCardDOM = (recipe) => {
 }
 
 const renderRecipes = () => {
-    const recipesEl = document.querySelector('#recipe-cards')
+    const recipesEl = document.getElementById('recipe-cards')
     const recipes = getRecipes()
     const filter = getFilter()
     const filteredRecipes = recipes.filter(recipe => recipe.title.toLowerCase().includes(filter.toLowerCase()))
@@ -68,10 +69,10 @@ const renderIngredients = (recipeId) => {
 }
 
 const initializeEditPage = (recipeId) => {
-    const titleEl = document.querySelector('#recipe-title')
-    const effectEl = document.querySelector('#recipe-effect')
-    const imageEl = document.querySelector('#image')
-    const imageSelectEl = document.querySelector('#image-select')
+    const titleEl = document.getElementById('recipe-title')
+    const effectEl = document.getElementById('recipe-effect')
+    const imageEl = document.getElementById('image')
+    const imageSelectEl = document.getElementById('image-select')
 
     // find the individual recipe
     const recipes = getRecipes()
@@ -147,4 +148,42 @@ const initializeIngredient = (recipeId, ingredient) => {
     return ingredientEl
 }
 
-export { renderRecipes, renderIngredients, initializeEditPage }
+const runDialogue = () => {
+    const element = document.getElementById('dialogue')
+
+    const callback = (text) => {
+        element.textContent = text
+    }
+
+    const options = {
+        typeSpeed: 30,
+        deleteSpeed: 1,
+        pauseDuration: 300,
+        repeat: false
+    }
+
+    switch (dialogueCount) {
+        case 0:
+            tayceTDialogue.dialogueGreeting(callback, options)
+            break;
+        case 1:
+            tayceTDialogue.dialogueRequest(callback, options)
+            break;
+        case 2:
+            tayceTDialogue.dialogueInstructions(callback, options)
+            break;
+        case 3:
+            tayceTDialogue.dialogueMistake(callback, options)
+            break;
+        default:
+            break;
+    }
+
+    dialogueCount++
+
+    if (dialogueCount >= Object.keys(tayceTDialogue).length) {
+        dialogueCount = 0
+    }
+}
+
+export { renderRecipes, renderIngredients, initializeEditPage, runDialogue }

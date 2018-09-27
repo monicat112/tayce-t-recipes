@@ -1,12 +1,19 @@
 import { createRecipe, createDefaultRecipes } from './recipes'
-import { renderRecipes } from './views'
+import { renderRecipes, runDialogue } from './views'
 import { setFilter } from './filters'
 
-const newRecipeBtn = document.querySelector('#create-recipe')
-const searchEl = document.querySelector('#search')
-const resetBtn = document.querySelector('#reset-recipes')
+const dialogueBtn = document.getElementById('dialogue-btn')
+const newRecipeBtn = document.getElementById('create-recipe')
+const searchEl = document.getElementById('search')
+const resetBtn = document.getElementById('reset-recipes')
 
 renderRecipes()
+runDialogue()
+
+dialogueBtn.addEventListener('click', (e) => {
+    e.preventDefault()
+    runDialogue()
+})
 
 newRecipeBtn.addEventListener('click', (e) => {
     e.preventDefault()

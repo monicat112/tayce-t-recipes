@@ -11,4 +11,7 @@ Last stop: working on the ingredients list in views.js, trying to figure out how
 
 ## Features
 
-* Auto-reload if the app is open in multiple tabs
+* TODO: Auto-reload if the app is open in multiple tabs
+* Malarkey for typing text effect
+* Image selection
+* 

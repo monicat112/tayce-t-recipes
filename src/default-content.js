@@ -1,5 +1,44 @@
 import uuidv4 from 'uuid/v4'
+import malarkey from 'malarkey'
 import { Ingredient, Recipe } from './classes'
+
+// Dialogue
+const tayceTDialogue = {
+    dialogueGreeting(callback, options) {
+        malarkey(callback, options)
+            .type('Oh, hello there, Mario! ')
+            .pause()
+            .type('I’m Tayce T. ')
+            .pause()
+            .type('I really love to cook! ')
+            .pause()
+            .type('<3')
+    },
+    dialogueRequest(callback, options) {
+        malarkey(callback, options)
+            .type('Would you help me update my recipe list? ')
+            .pause()
+            .type('I’ll make you something delicious if you do! ')
+            .pause()
+            .type('<3')
+    },
+    dialogueInstructions(callback, options) {
+        malarkey(callback, options)
+            .type('You can edit recipes, ')
+            .pause()
+            .type('add new ones ')
+            .pause()
+            .type('or remove recipes... ')
+            .pause()
+            .type('if you really don’t like them.')
+    },
+    dialogueMistake(callback, options) {
+        malarkey(callback, options)
+            .type('If you make a mistake, just reset the recipes! ')
+            .pause()
+            .type('<3')
+    }
+}
 
 // Images
 // tired to build this with the Image class, but the fileName getter wasn't accessible in views.js... Once the image object was passed into a recipe, it was a plain object instead of an Image class object, so the getter wasn't available.
@@ -68,4 +107,4 @@ const yoshiCookie = new Recipe(uuidv4(), 'Yoshi Cookie', yoshiCookieImage, 'Rest
 const defaultRecipes = [yoshiCookie, fireFlower, honeyShroom]
 const getDefaultRecipes = () => defaultRecipes
 
-export { getDefaultRecipes, imageList }
+export { getDefaultRecipes, imageList, tayceTDialogue }
