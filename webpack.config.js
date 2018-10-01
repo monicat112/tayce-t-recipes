@@ -11,17 +11,27 @@ module.exports = {
         filename: '[name]-bundle.js'
     },
     module: {
-        rules: [{
-            test: /\.js$/,
-            exclude: /node_modules/,
-            use: {
-                loader: 'babel-loader',
-                options: {
-                    presets: ['@babel/env'],
-                    plugins: ['transform-object-rest-spread']
+        rules: [
+            {
+                test: /\.js$/,
+                exclude: /node_modules/,
+                use: {
+                    loader: 'babel-loader',
+                    options: {
+                        presets: ['@babel/env'],
+                        plugins: ['transform-object-rest-spread']
+                    }
                 }
+            },
+            {
+                test: /\.scss$/,
+                use: [
+                    "style-loader", // creates style nodes from JS strings
+                    "css-loader", // translates CSS into CommonJS
+                    "sass-loader" // compiles Sass to CSS, using Node Sass by default
+                ]
             }
-        }]
+        ]
     },
     devServer: {
         contentBase:path.resolve(__dirname, 'public'),

@@ -148,7 +148,7 @@ const runDialogue = () => {
     const element = document.getElementById('dialogue')
     const dialogueBtn = document.getElementById('dialogue-btn')
 
-    if (dialogueCount == 0) {
+    if (dialogueCount === 0) {
         dialogueBtn.textContent = 'run dialogue'
     }
 

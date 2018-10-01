@@ -1,7 +1,3 @@
-Last stop: working on the ingredients list in views.js, trying to figure out how I can 
-1. Get that to re-render when a new item is added
-2. Store the checkbox data when it's changed
-
 # Tayce T. Recipes
 
 `$ npm run dev-server` to run the dev environment  
@@ -12,6 +8,6 @@ Last stop: working on the ingredients list in views.js, trying to figure out how
 ## Features
 
 * TODO: Auto-reload if the app is open in multiple tabs
-* Malarkey for typing text effect
+* Default recipe content
+* Typing text effect using Malarkey
 * Image selection
-* 

@@ -1,3 +1,4 @@
+import './sass/style.scss'
 import { renderIngredients, initializeEditPage } from './views'
 import { updateRecipe, removeRecipe } from './recipes'
 import { createIngredient } from './ingredients'

@@ -1,5 +1,6 @@
+import './sass/style.scss'
 import { createRecipe, createDefaultRecipes } from './recipes'
-import { renderRecipes, runDialogue, stop } from './views'
+import { renderRecipes, runDialogue } from './views'
 import { setFilter } from './filters'
 
 const dialogueBtn = document.getElementById('dialogue-btn')
