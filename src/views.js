@@ -14,6 +14,7 @@ const generateRecipeCardDOM = (recipe) => {
 
     // set the link
     recipeEl.setAttribute('href', `/edit.html#${recipe.id}`)
+    recipeEl.classList.add('list-box')
 
     // set the image
     imageEl.setAttribute('src', `./images/${recipe.image.fileName}.png`)

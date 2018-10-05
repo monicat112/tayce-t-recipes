@@ -4,19 +4,36 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link href="//fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Indie+Flower|Open+Sans:400,700" rel="stylesheet">
     <title>Tayce T Recipes</title>
 </head>
 <body>
-    <h1>Title</h1>
-    <div>
-        <p id="dialogue"></p>
-        <button id="dialogue-btn">run dialogue</button>
+
+    <div class="container">
+        <h1>Title</h1>
+        <div>
+            <p id="dialogue"></p>
+            <button id="dialogue-btn">run dialogue</button>
+        </div>
+
+        <div class="list-box">               
+            <div class="media">
+                <div class="media__image">
+                    <img src="https://picsum.photos/72/72" alt="">
+                </div>
+                <div class="media__body">
+                    <h2>Media Object Test</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam la.</p>
+                </div>
+            </div>
+        </div>
+
+        <input type="text" id="search">
+        <div id="recipe-cards"></div>
+        <button id="create-recipe">+1 Recipe</button> <br><br>
+        <button id="reset-recipes">Reset Recipes</button>
     </div>
-    <input type="text" id="search">
-    <div id="recipe-cards"></div>
-    <button id="create-recipe">+1 Recipe</button> <br><br>
-    <button id="reset-recipes">Reset Recipes</button>
+
     <script src="/scripts/index-bundle.js"></script>
 </body>
 </html>

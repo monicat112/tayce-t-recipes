@@ -1,0 +1,22 @@
+h1, h2, h3, h4, h5, h6 {
+    color: $brown
+}
+
+h1, h2, h3 {
+    font-family: $secondary-font;
+    font-weight: $fw-normal;
+    color: $brown
+}
+
+h4, h5, h6 {
+    font-weight: $fw-bold;
+    text-transform: uppercase;
+}
+
+h2 {
+    font-size: $font-size-h2;
+}
+
+h3 {
+    font-size: $font-size-h3;
+}
