@@ -1,0 +1,31 @@
+.media-block h2 {
+  // todo: check the mockup for spacing here
+  margin: 0 0 0.5rem 0;
+  line-height: 1;
+}
+
+.media-block > img {
+  margin: ($el-spacing/2) 0 0 0;
+}
+
+.media-block > div {
+  @include child-margin-clear;
+}
+
+@media (min-width: 500px) {
+  
+  .media-block {
+    display: flex;
+    align-items: flex-start;
+  }
+  
+  .media-block > img {
+    margin: 0 $el-spacing 0 0;
+    // width: 72px;
+  }
+
+  .media-block > div {
+    flex: 1;
+  }
+
+}

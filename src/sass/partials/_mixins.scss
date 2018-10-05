@@ -1,0 +1,14 @@
+@mixin secondary-body () {
+    font-size: 3rem;
+    font-family: $secondary-font;
+    line-height: $lh-short;
+}
+
+@mixin child-margin-clear () {
+    & > *:first-child {
+        margin-top: 0;
+    }
+    & > *:last-child {
+        margin-bottom: 0;
+    }
+}

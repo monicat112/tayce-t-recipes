@@ -5,7 +5,7 @@ h1, h2, h3, h4, h5, h6 {
 h1, h2, h3 {
     font-family: $secondary-font;
     font-weight: $fw-normal;
-    color: $brown
+    line-height: $lh-short;
 }
 
 h4, h5, h6 {
@@ -19,4 +19,12 @@ h2 {
 
 h3 {
     font-size: $font-size-h3;
+}
+
+p {
+    margin: ($el-spacing/2) 0;
+}
+
+.secondary-body {
+    @include secondary-body;
 }
