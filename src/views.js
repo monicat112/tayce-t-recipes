@@ -7,31 +7,59 @@ const ingretientsListEl = document.getElementById('recipe-ingredients-list')
 let dialogueCount = 0
 
 const generateRecipeCardDOM = (recipe) => {
-    const recipeEl = document.createElement('a')
+    const recipeEl = document.createElement('div')
+    const mediaEl = document.createElement('div')
+    const mediaTextEl = document.createElement('div')
+    const titleLinkEl = document.createElement('a')
     const titleEl = document.createElement('h2')
     const ingredientEl = document.createElement('p')
+    const imageLinkEl = document.createElement('a')
     const imageEl = document.createElement('img')
+    const recipeButtonEl = document.createElement('a')
+    const recipeLink = `/edit.html#${recipe.id}`
 
-    // set the link
-    recipeEl.setAttribute('href', `/edit.html#${recipe.id}`)
+    // container
     recipeEl.classList.add('list-box')
 
-    // set the image
-    imageEl.setAttribute('src', `./images/${recipe.image.fileName}.png`)
-    recipeEl.appendChild(imageEl)
+    // media block
+    mediaEl.classList.add('media-block')
+    recipeEl.appendChild(mediaEl)
 
-    // set the title
+    // image link 
+    imageLinkEl.setAttribute('src', recipeLink)
+    mediaEl.appendChild(imageLinkEl)
+
+    // image
+    imageEl.setAttribute('src', `./images/${recipe.image.fileName}.png`)
+    imageEl.setAttribute('alt', '')
+    imageLinkEl.appendChild(imageEl)
+
+    // text wrapper
+    mediaEl.appendChild(mediaTextEl)
+
+    // title link
+    titleLinkEl.setAttribute('href', recipeLink)
+    mediaTextEl.appendChild(titleLinkEl)
+
+    // title
     if (recipe.title.length > 0 ) {
         titleEl.textContent = recipe.title
     } else {
         titleEl.textContent = '[Untitled Recipe]'
     }
     titleEl.classList.add('recipe-card__title')
-    recipeEl.appendChild(titleEl)
+    titleLinkEl.appendChild(titleEl)
 
-    // set the ingredient text
+    // ingredient text
     ingredientEl.textContent = haveIngredients(recipe)
-    recipeEl.appendChild(ingredientEl)
+    ingredientEl.classList.add('secondary-body')
+    mediaTextEl.appendChild(ingredientEl)
+
+    // button
+    recipeButtonEl.setAttribute('href', recipeLink)
+    recipeButtonEl.classList.add('button')
+    recipeButtonEl.innerText = 'edit recipe'
+    mediaTextEl.appendChild(recipeButtonEl)
 
     return recipeEl
 }

@@ -4,12 +4,8 @@
     border: 3px solid #000;
     border-radius: $border-radius;
     padding: 3rem;
-    text-decoration: none;
+    
     & + .list-box {
         margin-top: $block-margin;
     }
-}
-
-.list-box__title {
-
 }

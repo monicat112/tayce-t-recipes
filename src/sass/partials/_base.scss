@@ -1,6 +1,9 @@
 html {
-    font-size: 62.5%;
+    font-size: 50%;
     box-sizing: border-box;
+    @media (min-width: $break) {
+        font-size: 62.5%;
+    }
 }
 
 *, *:after, *:before {
