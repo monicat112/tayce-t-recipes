@@ -27,7 +27,6 @@ const toggleIngredient = (ingredient) => {
     } else {
         ingredient.available = true
     }
-
     saveRecipes()
 }
 

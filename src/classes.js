@@ -16,6 +16,7 @@ class Recipe {
     }
 }
 
+// Couldn't get this to work :/ I was't able to retrieve the fileName info where I needed it for some reason
 // class Image {
 //     constructor(name) {
 //         this.name = name

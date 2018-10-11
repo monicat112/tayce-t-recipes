@@ -13,8 +13,6 @@ const deleteBtn = document.getElementById('delete-btn')
 
 initializeEditPage(recipeId)
 
-// todo: image attribute is being deleted from the recipe object when anything is edited
-
 titleEl.addEventListener('input', (e) => {
     updateRecipe(recipeId, {
         title: e.target.value

@@ -21,6 +21,10 @@ h3 {
     font-size: $font-size-h3;
 }
 
+// .small-title {
+//     @include small-title();
+// }
+
 p {
     margin: ($el-spacing/2) 0;
 }

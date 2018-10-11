@@ -1,0 +1,10 @@
+.ingredient-list {
+    list-style-type: none;
+    padding: 0;
+
+    li {
+        @include secondary-body();
+        margin: 5px 0;
+    }
+
+}

@@ -40,8 +40,7 @@ const tayceTDialogue = {
     }
 }
 
-// Images
-// tired to build this with the Image class, but the fileName getter wasn't accessible in views.js... Once the image object was passed into a recipe, it was a plain object instead of an Image class object, so the getter wasn't available.
+// Images - see classess.js for potential improvement
 const imageList = [
     {
         name: 'Yummy Meal',
@@ -89,7 +88,7 @@ const imageList = [
 const ingredient1a = new Ingredient(uuidv4(), 'Dried Fruit', false)
 const ingredient1b = new Ingredient(uuidv4(), 'Strange Leaf', false)
 const fireFlowerImage = imageList.find((image) => image.name === 'Fire Flower')
-const fireFlower = new Recipe(uuidv4(), 'Fire Flower', fireFlowerImage, 'Deals 3 HP of damage to all enemies. Great addition to any boquet.', [ingredient1a, ingredient1b])
+const fireFlower = new Recipe(uuidv4(), 'Fire Flower', fireFlowerImage, 'Deals 3 HP of damage to all enemies. Great addition to any bouquet.', [ingredient1a, ingredient1b])
 
 // Honey Shroom
 const ingredient2a = new Ingredient(uuidv4(), 'Honey Syrup', false)

@@ -8,23 +8,54 @@
     <title>Tayce T Recipes - Edit</title>
 </head>
 <body>
-    <h1>Title</h1>
-    <a href="/">back</a><br><br>
-    <div>
-        <div><img id="image"></div>
-        <input type="text" id="recipe-title" placeholder="Recipe title"> <br><br>
-        <textarea name="effect" id="recipe-effect" cols="30" rows="3" placeholder="Effect"></textarea>
-        <select name="images" id="image-select">
-        </select>
+    <div class="container">
+        <h1>Title</h1>
+        <a href="/">back</a><br><br>
         <div>
-            <h2>Ingredients</h2>
-            <ul id="recipe-ingredients-list"></ul>
-            <input type="text" id="recipe-ingredient">
-            <button id="create-ingredient">+1 Ingredient</button>
-        </div>
-        <div>
-            <h2>Danger Zone</h2>
-            <button id="delete-btn">Delete Recipe</button>
+            <div class="ingredient-frame">
+                <div class="ingredient-frame__item">
+                    <img id="image" alt="">
+                </div>
+            </div>
+
+            <div class="form-item">
+                <label>
+                    <div class="form-item__text">Recipe Name</div>
+                    <input type="text" id="recipe-title">
+                </label>
+            </div>
+
+            <div class="form-item">
+                <label>
+                    <div class="form-item__text">Effect</div>
+                    <textarea id="recipe-effect" rows="2" ></textarea>
+                </label>
+            </div>
+
+            <div class="form-item">
+                <label>
+                    <div class="form-item__text">Image</div>
+                    <div class="select-wrap">
+                        <select name="images" id="image-select"></select>
+                    </div>
+                </label>
+            </div>
+
+            <div class="form-item">
+                <label><div class="form-item__text">Ingredients</div></label>
+                <ul id="recipe-ingredients-list" class="ingredient-list"></ul>
+            </div>
+
+            <div class="form-item">
+                <label class="visually-hidden">New Ingredient</label>
+                <input type="text" id="recipe-ingredient" placeholder="New Ingredient">
+                <button id="create-ingredient">+1 Ingredient</button>
+            </div>
+                        
+            <div>
+                <h2>Danger Zone</h2>
+                <button id="delete-btn">Delete Recipe</button>
+            </div>
         </div>
     </div>
 

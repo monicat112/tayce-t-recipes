@@ -140,30 +140,39 @@ const initializeIngredient = (recipeId, ingredient) => {
     const ingredientEl = document.createElement('li')
     const label = document.createElement('label')
     const checkbox = document.createElement('input')
+    const outerCheckbox = document.createElement('div')
+    const innerCheckbox = document.createElement('div')
     const remove = document.createElement('button')
     const idName = ingredient.name.toLowerCase().replace(' ', '-')
 
     // set id
     ingredientEl.id = idName
-
-    // set ingredient text
-    label.textContent = ingredient.name
+    
+    // set label
     ingredientEl.appendChild(label)
+    label.textContent = ingredient.name
+    label.classList.add('checkbox-label')
 
-    // add checkbox to label
+    // set checkbox items for CSS
+    outerCheckbox.classList.add('outer')
+    innerCheckbox.classList.add('inner')
+    label.prepend(outerCheckbox)
+    outerCheckbox.appendChild(innerCheckbox)  
+
+    // set checkbox
     checkbox.setAttribute('type', 'checkbox')
     checkbox.checked = ingredient.available
     label.prepend(checkbox)
     checkbox.addEventListener('change', (e) => {
         toggleIngredient(ingredient)
     })
-    
+
     // create remove link
     remove.textContent = 'remove'
     remove.classList.add('remove-ingredient')
     ingredientEl.appendChild(remove)
 
-    // remove ingretient
+    // remove ingredient
     remove.addEventListener('click', (e) => {
         e.preventDefault()
         removeIngredient(recipeId, ingredient.id)

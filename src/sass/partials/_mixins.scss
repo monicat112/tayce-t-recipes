@@ -1,5 +1,18 @@
+@mixin box-border () {
+    border: 3px solid #000;
+    border-radius: $border-radius;
+}
+
 @mixin secondary-body () {
     font-size: 3rem;
+    text-transform: initial;
+    font-family: $secondary-font;
+    line-height: $lh-short;
+}
+
+@mixin small-title () {
+    font-size: 2.4rem;
+    text-transform: uppercase;
     font-family: $secondary-font;
     line-height: $lh-short;
 }
@@ -11,4 +24,17 @@
     & > *:last-child {
         margin-bottom: 0;
     }
+}
+
+@mixin frameGradient () {
+    background: $wall-yellow-shadow; /* Old browsers */
+    background: -moz-linear-gradient(top, $wall-yellow-shadow 0%, $wall-yellow 67%, $table-brown 67%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, $wall-yellow-shadow 0%,$wall-yellow 67%,$table-brown 67%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, $wall-yellow-shadow 0%,$wall-yellow 67%,$table-brown 67%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+}
+
+@mixin shadowGradient () {
+    background: -moz-radial-gradient(center, ellipse cover, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0) 42%, rgba(0,0,0,0) 100%); /* FF3.6-15 */
+    background: -webkit-radial-gradient(center, ellipse cover, rgba(0,0,0,0.9) 0%,rgba(0,0,0,0) 42%,rgba(0,0,0,0) 100%); /* Chrome10-25,Safari5.1-6 */
+    background: radial-gradient(ellipse at center, rgba(0,0,0,0.9) 0%,rgba(0,0,0,0) 42%,rgba(0,0,0,0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 }

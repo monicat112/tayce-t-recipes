@@ -1,0 +1,76 @@
+$height: 4.8rem;
+$arrow-width: 12px;
+$arrow-height: 15px;
+
+.select-wrap {
+  background-color: $cream-fat-free;
+  padding: 0;
+  display: inline-block;
+  position: relative;
+  z-index: 1;
+ 
+
+  select {
+    cursor: pointer;
+    box-shadow: none;
+    background: transparent;
+    width: 100%;
+    @include secondary-body();
+    height: $height;
+    padding: 0 calc(#{$arrow-width}  + (#{$field-padding})) 0 $field-padding;
+    border-radius: $border-radius;
+    border: $field-border;
+    outline: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+  }
+
+  &:before {
+    content: '';
+    display: block;
+    z-index: -1;
+    position: absolute;
+    top: 50%;    
+    right: $field-padding;
+    margin-top: -($arrow-height/2); 
+    pointer-events: none;
+    border-top: $arrow-height solid $brown;
+    border-left: $arrow-width solid transparent;
+    border-right: $arrow-width solid transparent;
+  }
+
+  &:after {
+    content: '';
+    display: block;
+    z-index: -2;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: calc((#{$arrow-width*2}) + (#{$field-padding*2}));
+    height: 100%;
+    background: $cream-fat-free;
+    pointer-events: none;
+    border-radius: $border-radius;
+  }
+}
+
+/* Firefox fix */
+:-moz-any(.select-wrap){
+  &:before {
+    pointer-events: none; 
+    z-index: 1;
+  }
+  &:after {
+    z-index: 0;
+    height: calc(#{$height} - 4px);
+    right: 2px;
+    top: 2px;
+  }
+}
+
+/* IE 10+ fix */
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+  .select-wrap select::-ms-expand {
+    display: none;
+  }
+}

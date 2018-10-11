@@ -1,0 +1,42 @@
+.form-item {
+    margin: $el-spacing-lg 0;
+}
+
+/* labels */
+
+.form-item > label {
+    display: block;
+    @include small-title();
+}
+
+.form-item__text {
+    margin-bottom: 2rem;
+}
+
+/* fields */
+
+%field-base {
+    background: $cream-fat-free;
+    @include secondary-body();
+    width: 100%;
+    padding: 0;
+    padding: $field-padding;
+    border: none;
+    border-bottom: $field-border;
+    border-radius: $border-radius;
+}
+
+
+
+input[type="text"] {
+    $space-adjust: 4px;
+
+    @extend %field-base;
+    height: $input-height;
+    padding-top: calc(#{$field-padding} + #{$space-adjust});
+    padding-bottom: calc(#{$field-padding} - #{$space-adjust});
+}
+
+textarea {
+    @extend %field-base;
+}
