@@ -6,6 +6,7 @@ import { imageList } from './default-content'
 
 const recipeId = location.hash.substring(1)
 const titleEl = document.getElementById('recipe-title')
+const pageTitleEl = document.getElementById('page-title')
 const effectEl = document.getElementById('recipe-effect')
 const ingredientBtn = document.getElementById('create-ingredient')
 const imageSelectEl = document.getElementById('image-select')
@@ -14,8 +15,16 @@ const deleteBtn = document.getElementById('delete-btn')
 initializeEditPage(recipeId)
 
 titleEl.addEventListener('input', (e) => {
+    const newTitle = e.target.value.trim()
+    if (newTitle !== '') {
+        pageTitleEl.textContent = newTitle
+        console.log(true)
+    } else {
+        pageTitleEl.textContent = '[Untitled Recipe]'
+        console.log(false)
+    }
     updateRecipe(recipeId, {
-        title: e.target.value
+        title: newTitle
     })
 })
 

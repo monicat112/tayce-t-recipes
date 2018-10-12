@@ -21,36 +21,25 @@ $checkbox-size: 3rem;
     width: $checkbox-size;
     height: $checkbox-size;
     border: $field-border;
-    background: $cream;
+    background: $fat-free-cream;
     border-radius: $border-radius;
     transform: translateY(-50%);
 }
 
 .checkbox-label .inner {
     position: absolute;
-    transform: rotate(-140deg) scale(.6);
+    transform: rotate(56deg) skew(16deg) scale(0.6);
     display: inline-block;
-
-    height: 12px;
-    width: 3px;
-    left: 7px;
-    top: 1px;
-
-    background-color: $brown;
+    height: 2.2rem;
+    width: 1rem;
+    left: 0.8rem;
+    top: 0px;
+    border: 0.3rem solid $brown;
+    border-top: none;
+    border-left: none;
     opacity: 0;
-    transition: transform 150ms;
-}
-
-.checkbox-label .inner:after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    display: block;
-    width: 6px;
-    height: 3px;
-    background-color: inherit;
-}
+    transition: transform 100ms, opacity 100ms;
+} 
 
 .checkbox-label input:focus+.outer,
 .checkbox-label input:hover+.outer {
@@ -58,6 +47,6 @@ $checkbox-size: 3rem;
 }
 
 .checkbox-label input:checked+.outer .inner {
-    transform: rotate(-140deg) scale(1);
+    transform: rotate(56deg) skew(16deg) scale(1);
     opacity: 1;
 }

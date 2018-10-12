@@ -3,21 +3,20 @@ $arrow-width: 12px;
 $arrow-height: 15px;
 
 .select-wrap {
-  background-color: $cream-fat-free;
+  background-color: $fat-free-cream;
   padding: 0;
   display: inline-block;
   position: relative;
   z-index: 1;
  
-
   select {
     cursor: pointer;
     box-shadow: none;
     background: transparent;
     width: 100%;
-    @include secondary-body();
+    @include novelty-body-text();
     height: $height;
-    padding: 0 calc(#{$arrow-width}  + (#{$field-padding})) 0 $field-padding;
+    padding: 0 calc((#{$arrow-width}*2)  + (#{$field-padding}*2)) 0 $field-padding;
     border-radius: $border-radius;
     border: $field-border;
     outline: none;
@@ -48,7 +47,7 @@ $arrow-height: 15px;
     right: 0;
     width: calc((#{$arrow-width*2}) + (#{$field-padding*2}));
     height: 100%;
-    background: $cream-fat-free;
+    background: $fat-free-cream;
     pointer-events: none;
     border-radius: $border-radius;
   }

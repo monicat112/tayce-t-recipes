@@ -15,6 +15,7 @@ body {
     font-family:  $primary-font;
     font-size: $font-size-base;
     color: $brown;
+    line-height: $line-height-standard;
 }
 
 .container {
@@ -23,4 +24,3 @@ body {
     margin: 0 auto;
     padding: 0 $container-padding;
 }
-

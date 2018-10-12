@@ -1,5 +1,9 @@
 .form-item {
-    margin: $el-spacing-lg 0;
+    margin: $el-spacing-lg 0 0;
+}
+
+.form-item-short {
+    margin: $el-spacing 0 0;
 }
 
 /* labels */
@@ -16,8 +20,8 @@
 /* fields */
 
 %field-base {
-    background: $cream-fat-free;
-    @include secondary-body();
+    background: $fat-free-cream;
+    @include novelty-body-text();
     width: 100%;
     padding: 0;
     padding: $field-padding;
@@ -25,8 +29,6 @@
     border-bottom: $field-border;
     border-radius: $border-radius;
 }
-
-
 
 input[type="text"] {
     $space-adjust: 4px;
@@ -39,4 +41,13 @@ input[type="text"] {
 
 textarea {
     @extend %field-base;
+}
+
+/* groupings */
+
+.field-button-stack {
+    text-align: right;
+    > input {
+        margin-bottom: 2rem;
+    }
 }

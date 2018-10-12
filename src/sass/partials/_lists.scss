@@ -1,0 +1,13 @@
+.link-list {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    display: inline;
+    > li {
+        display: inline;
+        position: relative;
+    }
+    li + li:before {
+        content: '| ';
+    }
+}

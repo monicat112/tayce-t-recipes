@@ -47,12 +47,12 @@ const generateRecipeCardDOM = (recipe) => {
     } else {
         titleEl.textContent = '[Untitled Recipe]'
     }
-    titleEl.classList.add('recipe-card__title')
+    titleEl.classList.add('title-bigger')
     titleLinkEl.appendChild(titleEl)
 
     // ingredient text
     ingredientEl.textContent = haveIngredients(recipe)
-    ingredientEl.classList.add('secondary-body')
+    ingredientEl.classList.add('novelty-body-text')
     mediaTextEl.appendChild(ingredientEl)
 
     // button
@@ -99,6 +99,7 @@ const renderIngredients = (recipeId) => {
 
 const initializeEditPage = (recipeId) => {
     const titleEl = document.getElementById('recipe-title')
+    const pageTitleEl = document.getElementById('page-title')
     const effectEl = document.getElementById('recipe-effect')
     const imageEl = document.getElementById('image')
     const imageSelectEl = document.getElementById('image-select')
@@ -114,6 +115,9 @@ const initializeEditPage = (recipeId) => {
 
     // set values
     titleEl.value = recipe.title
+    if (recipe.title !== '') {
+        pageTitleEl.textContent = recipe.title
+    }
     effectEl.value = recipe.effect
     imageEl.setAttribute('src', `./images/${recipe.image.fileName}-lg.png`)
     renderIngredients(recipeId)
@@ -169,7 +173,7 @@ const initializeIngredient = (recipeId, ingredient) => {
 
     // create remove link
     remove.textContent = 'remove'
-    remove.classList.add('remove-ingredient')
+    remove.classList.add('un-button', 'un-button--danger')
     ingredientEl.appendChild(remove)
 
     // remove ingredient

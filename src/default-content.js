@@ -102,8 +102,14 @@ const ingredient3b = new Ingredient(uuidv4(), 'Cake Mix', true)
 const yoshiCookieImage = imageList.find((image) => image.name === 'Yoshi Cookie')
 const yoshiCookie = new Recipe(uuidv4(), 'Yoshi Cookie', yoshiCookieImage, 'Restores 15 HP and 15 FP. May contain Yoshis.', [ingredient3a, ingredient3b])
 
+// Mistake
+const ingredient4a = new Ingredient(uuidv4(), 'Dried Shroom', false)
+const ingredient4b = new Ingredient(uuidv4(), 'Cake Mix', true)
+const mistakeImage = imageList.find((image) => image.name === 'Mistake')
+const mistake = new Recipe(uuidv4(), 'Shroom Souffle?', mistakeImage, 'Deals 3 HP of damage... to you.', [ingredient4a, ingredient4b])
+
 // Default Recipes
-const defaultRecipes = [yoshiCookie, fireFlower, honeyShroom]
+const defaultRecipes = [yoshiCookie, fireFlower, honeyShroom, mistake]
 const getDefaultRecipes = () => defaultRecipes
 
 export { getDefaultRecipes, imageList, tayceTDialogue }

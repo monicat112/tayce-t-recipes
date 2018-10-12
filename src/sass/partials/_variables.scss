@@ -1,8 +1,14 @@
 // Colors 
 $cream: #F9EACA; // background
-// $cream-fat-free: #fbf1da;
-$cream-fat-free: #fcf5e3;
+$fat-free-cream: #fcf5e3; // fileds
 $brown: #46321D; // text
+$dust: #9E8674;
+$red: #DF3034;
+$redder: #DF3034;
+$orange: #FFA33E;
+$oranger: #FFA33E;
+$yellow: #FBEF50;
+$yellower: #FBEF50;
  
 $table-brown: #664431;
 $wall-yellow: #FBF5A8; 
@@ -19,12 +25,18 @@ $primary-font: 'Open Sans', sans-serif;
 $secondary-font: 'Indie Flower', cursive;
 $fw-normal: 400;
 $fw-bold: 700; // only for open sans
-$lh-short: 1;
+$line-height-standard: 1.6;
+$line-height-short: 1;
 
 // Font Sizes
 $font-size-base: 1.6rem;
-$font-size-h2: 5rem;
-$font-size-h3: 4rem;
+$font-size-secondary: 3rem;
+$font-size-button: 2.3rem;
+
+$font-size-title-bigger: 5rem;
+$font-size-h1: 4.7rem;
+$font-size-h2: 4rem;
+$font-size-h3: 3.7rem;
  
 // Form Fields
 $input-height: 4.7rem;

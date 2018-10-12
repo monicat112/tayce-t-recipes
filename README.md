@@ -10,3 +10,13 @@
 * Default recipe content
 * Typing text effect using Malarkey
 * Image selection
+
+## Todo
+
+* Placeholder color
+* Button styles
+* Logo
+* Speech bubble background
+* Speech bubble button
+* Home search bar
+* Home recipe card spacing

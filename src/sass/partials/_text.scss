@@ -5,12 +5,18 @@ h1, h2, h3, h4, h5, h6 {
 h1, h2, h3 {
     font-family: $secondary-font;
     font-weight: $fw-normal;
-    line-height: $lh-short;
+    line-height: $line-height-short;
+    margin: $el-spacing-lg 0 ($el-spacing/2);
 }
 
 h4, h5, h6 {
     font-weight: $fw-bold;
     text-transform: uppercase;
+    margin: ($el-spacing/2) 0;
+}
+
+h1 {
+    font-size: $font-size-h1;
 }
 
 h2 {
@@ -21,14 +27,23 @@ h3 {
     font-size: $font-size-h3;
 }
 
-// .small-title {
-//     @include small-title();
-// }
-
 p {
     margin: ($el-spacing/2) 0;
 }
 
-.secondary-body {
-    @include secondary-body;
+// .text-center {
+//     text-align: center;
+// }
+
+.title-bigger {
+    font-size: $font-size-title-bigger;
+}
+
+.novelty-body-text {
+    @include novelty-body-text;
+}
+
+.plus-one-spacer {
+    display: inline-block;
+    width: 0.3rem;
 }

@@ -1,0 +1,40 @@
+/* types of buttons */
+%button-base {
+    @include button-text();
+    border-radius: $border-radius;
+    text-decoration: none;
+    padding: 1rem 1.7rem;
+    color: #000;
+}
+
+.button {
+    @extend %button-base;
+    border: none;
+    background: $yellow;
+    &:hover, &:focus {
+    }
+}
+
+.outline-button {
+    @extend %button-base;
+    border: $dust;
+    color: $brown;
+}
+
+/* modifiers */
+
+.button--important {
+    background: $orange;
+}
+
+.button--danger {
+    background: $red;
+    color: #fff;
+    &:hover, &:focus {
+
+    }
+}
+
+.button--large {
+
+}

@@ -28,6 +28,11 @@ Recipe Detail Page
 * Delete recipe button
 
 ## Ideas
+
+Did anyone else play N64 Paper Mario? I took a JavaScript class on Udemy recently and the last task was to build a recipe app...
+
+So here is my vanilla JS, Paper Mario themed recipe app :D I had fun with the dialogue and the item descriptions, hope you enjoy it too!
+
 * [Paper Mario Theme](https://www.mariowiki.com/List_of_Tayce_T._recipes)
 * [Tayce T. Sprites](https://www.spriters-resource.com/fullview/106157/)
 * [Button - flatten sides on hover](https://codepen.io/ashleynolan/pen/djpCG)
