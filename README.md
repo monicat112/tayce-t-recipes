@@ -6,17 +6,19 @@
 
 ## Features
 
-* TODO: Auto-reload if the app is open in multiple tabs
 * Default recipe content
-* Typing text effect using Malarkey
 * Image selection
+* Typing text effect using Malarkey
 
 ## Todo
 
-* Placeholder color
-* Button styles
-* Logo
+* ~~Placeholder color~~
+* ~~Button styles~~
+* ~~Logo~~
 * Speech bubble background
 * Speech bubble button
 * Home search bar
 * Home recipe card spacing
+* Auto-reload if the app is open in multiple tabs
+* Don't add ingredient without input data
+* Anti button outline script, only shows for tabbing

@@ -5,15 +5,3 @@ a {
     }
 }
 
-.un-button {
-    @include button-text();
-    @include un-button();
-    font-size: $font-size-button;
-}
-
-.un-button--danger {
-    color: $red;
-    &:hover, &:focus {
-        color: $redder;
-    }
-}

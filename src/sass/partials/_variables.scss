@@ -4,19 +4,22 @@ $fat-free-cream: #fcf5e3; // fileds
 $brown: #46321D; // text
 $dust: #9E8674;
 $red: #DF3034;
-$redder: #DF3034;
+$redder: rgb(235, 69, 72);
 $orange: #FFA33E;
-$oranger: #FFA33E;
-$yellow: #FBEF50;
-$yellower: #FBEF50;
+$oranger: rgb(255, 178, 96);
+// $yellow: #FBEF50;
+$yellow: #fff568;
+$yellower: #fff78d;
  
 $table-brown: #664431;
 $wall-yellow: #FBF5A8; 
 $wall-yellow-shadow: #E3BF96;
 
 // Spacing
+$el-spacing-sm: 1.5rem;
 $el-spacing: 3rem;
 $el-spacing-lg: 6rem;
+
 $container-padding: 2rem;
 $block-margin: 3.5rem;
 

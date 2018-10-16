@@ -9,6 +9,10 @@
     margin-top: 8rem;
 }
 
+.top-margin-lg {
+    margin-top: ($el-spacing * 2);
+}
+
 .top-margin {
     margin-top: $el-spacing;
 }

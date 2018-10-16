@@ -1,40 +1,58 @@
-/* types of buttons */
-%button-base {
-    @include button-text();
-    border-radius: $border-radius;
-    text-decoration: none;
-    padding: 1rem 1.7rem;
-    color: #000;
-}
 
+/* types of buttons */
 .button {
     @extend %button-base;
-    border: none;
     background: $yellow;
     &:hover, &:focus {
+        background: $yellower;
     }
 }
 
-.outline-button {
-    @extend %button-base;
-    border: $dust;
-    color: $brown;
+// stop looking like a button even though you is
+.un-button {
+    @include button-text();
+    @include un-button();
+    font-size: $font-size-button;
 }
+
+// .outline-button {
+//     @extend %button-base;
+//     border: 3px solid $dust;
+//     background: $cream;
+//     box-shadow: none;
+//     &:hover, &:focus {
+//         box-shadow: none;
+//     }
+//     &:active {
+//         box-shadow: none;
+//     }
+// }
 
 /* modifiers */
 
 .button--important {
     background: $orange;
+    &:hover, &:focus {
+        background: $oranger;
+    }
 }
 
 .button--danger {
     background: $red;
     color: #fff;
     &:hover, &:focus {
-
+        background: $redder;
     }
 }
 
 .button--large {
+    padding: 1.3rem 2.1rem;
+    font-size: $font-size-secondary;
+}
 
+.un-button--danger {
+    color: $red;
+    &:hover, &:focus {
+        color: $redder;
+    }
 }

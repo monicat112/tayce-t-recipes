@@ -1,0 +1,18 @@
+/* inspired by https://codepen.io/finnhvman/pen/MQyJxV/ */
+%button-base {
+    @include button-text();
+    display: inline-block;
+    border-radius: $border-radius;
+    text-decoration: none;
+    padding: 1rem 1.7rem;
+    color: #000;
+    border: 2px solid #000;
+    border-top: none;
+    border-left: none;
+    &:hover, &:focus {
+        box-shadow: 1px 1px 0 #000;
+    }
+    &:active {
+        box-shadow: 2px 2px 0 #000;
+    }
+}

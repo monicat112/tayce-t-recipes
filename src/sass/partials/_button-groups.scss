@@ -1,0 +1,22 @@
+.parallel-pair-of-buttons {
+    display: flex;
+    flex-direction: column;
+    
+    button + button {
+        margin-top: $el-spacing-sm;
+    }
+}
+
+@media (min-width: $break) {
+
+    .parallel-pair-of-buttons {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+
+        button + button {
+            margin-top: 0;
+        }
+    }
+
+}

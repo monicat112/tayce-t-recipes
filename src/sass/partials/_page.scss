@@ -3,12 +3,15 @@
 }
 
 .logo {
-    display: block;
-    margin: 0 auto;
+    display: inline-block;
+    > svg {
+        display: block;
+        max-width: 100%;
+    }
 }
 
 .main {
-    margin-bottom: 8rem;
+    margin-bottom: 14rem;
 }
 
 .footer {
