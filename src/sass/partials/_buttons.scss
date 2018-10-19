@@ -15,19 +15,6 @@
     font-size: $font-size-button;
 }
 
-// .outline-button {
-//     @extend %button-base;
-//     border: 3px solid $dust;
-//     background: $cream;
-//     box-shadow: none;
-//     &:hover, &:focus {
-//         box-shadow: none;
-//     }
-//     &:active {
-//         box-shadow: none;
-//     }
-// }
-
 /* modifiers */
 
 .button--important {

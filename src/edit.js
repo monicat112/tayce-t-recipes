@@ -18,10 +18,8 @@ titleEl.addEventListener('input', (e) => {
     const newTitle = e.target.value.trim()
     if (newTitle !== '') {
         pageTitleEl.textContent = newTitle
-        console.log(true)
     } else {
         pageTitleEl.textContent = '[Untitled Recipe]'
-        console.log(false)
     }
     updateRecipe(recipeId, {
         title: newTitle
@@ -55,4 +53,11 @@ deleteBtn.addEventListener('click', (e) => {
     e.preventDefault()
     removeRecipe(recipeId)
     location.assign(`/`)
+})
+
+window.addEventListener('storage', (e) => {
+    if (e.key === 'recipes') {
+        initializeEditPage(recipeId)
+        console.log('recipes updated')
+    }
 })

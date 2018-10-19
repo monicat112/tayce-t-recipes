@@ -5,3 +5,9 @@ a {
     }
 }
 
+.reverse-link-underline {
+    text-decoration: none;
+    &:hover, &:focus {
+        text-decoration: underline;
+    }
+}

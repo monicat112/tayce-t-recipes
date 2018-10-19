@@ -15,10 +15,21 @@
 * ~~Placeholder color~~
 * ~~Button styles~~
 * ~~Logo~~
+* ~~Home search bar~~
+* ~~Home recipe card spacing~~
+* ~~Recipe cards - move link inside~~
+* Auto-reload if the app is open in multiple tabs
+    * This isn't working... the local data is changing but the stuff on the page isn't
+* Anti button outline script, only shows for tabbing
+* Don't allow adding ingredient without input first
 * Speech bubble background
 * Speech bubble button
-* Home search bar
-* Home recipe card spacing
-* Auto-reload if the app is open in multiple tabs
-* Don't add ingredient without input data
-* Anti button outline script, only shows for tabbing
+
+Autoreloading: See notes-app index.js
+```javascript
+window.addEventListener('storage', (e) => {
+    if (e.key === 'notes') {
+        renderNotes()
+    }
+})
+```

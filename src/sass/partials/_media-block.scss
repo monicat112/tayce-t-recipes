@@ -4,11 +4,21 @@
 
 .media-block > div {
   @include child-margin-clear;
+  margin-top: $el-spacing-sm;
 }
 
 .media-block h2 {
-  margin: 0 0 0.5rem 0;
+  margin: 0;
   line-height: 1;
+}
+
+.media-block p {
+  &:first-of-type {
+    margin-top: 1rem;
+  }
+  &:last-of-type {
+    margin-bottom: 3rem;
+  }
 }
 
 @media (min-width: $break) {
@@ -24,6 +34,7 @@
 
   .media-block > div {
     flex: 1;
+    margin-top: 0;
   }
 
 }

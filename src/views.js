@@ -17,16 +17,16 @@ const generateRecipeCardDOM = (recipe) => {
     const imageEl = document.createElement('img')
     const recipeButtonEl = document.createElement('a')
     const recipeLink = `/edit.html#${recipe.id}`
-
+    
     // container
-    recipeEl.classList.add('list-box')
+    recipeEl.classList.add('list-box', 'recipe-card')
 
     // media block
     mediaEl.classList.add('media-block')
     recipeEl.appendChild(mediaEl)
 
     // image link 
-    imageLinkEl.setAttribute('src', recipeLink)
+    imageLinkEl.setAttribute('href', recipeLink)
     mediaEl.appendChild(imageLinkEl)
 
     // image
@@ -37,18 +37,19 @@ const generateRecipeCardDOM = (recipe) => {
     // text wrapper
     mediaEl.appendChild(mediaTextEl)
 
-    // title link
-    titleLinkEl.setAttribute('href', recipeLink)
-    mediaTextEl.appendChild(titleLinkEl)
-
     // title
-    if (recipe.title.length > 0 ) {
-        titleEl.textContent = recipe.title
-    } else {
-        titleEl.textContent = '[Untitled Recipe]'
-    }
     titleEl.classList.add('title-bigger')
-    titleLinkEl.appendChild(titleEl)
+    mediaTextEl.appendChild(titleEl)
+
+    // title link
+    if (recipe.title.length > 0 ) {
+        titleLinkEl.textContent = recipe.title
+    } else {
+        titleLinkEl.textContent = '[Untitled Recipe]'
+    }
+    titleLinkEl.setAttribute('href', recipeLink)
+    titleLinkEl.classList.add('reverse-link-underline')
+    titleEl.appendChild(titleLinkEl)
 
     // ingredient text
     ingredientEl.textContent = haveIngredients(recipe)
@@ -83,6 +84,7 @@ const renderRecipes = () => {
         messageEl.textContent = "No recipes."
         recipesEl.appendChild(messageEl)
     }
+
 }
 
 const renderIngredients = (recipeId) => {

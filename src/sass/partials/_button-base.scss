@@ -9,6 +9,7 @@
     border: 2px solid #000;
     border-top: none;
     border-left: none;
+    transition: box-shadow 100ms ease-out;
     &:hover, &:focus {
         box-shadow: 1px 1px 0 #000;
     }

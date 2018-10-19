@@ -1,0 +1,15 @@
+.search-wrapper {
+    position: relative;
+    margin: 6.5rem auto 8rem;
+    img {
+        position: absolute;
+        top: 50%;
+        left: 11px;
+        transform: translateY(-50%);
+    }
+    input {
+        padding-left: 58px; /* image size + some extra*/
+        background: transparent;
+        border-radius: 0;
+    }
+}

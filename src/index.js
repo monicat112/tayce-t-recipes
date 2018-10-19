@@ -1,5 +1,5 @@
 import './sass/style.scss'
-import { createRecipe, createDefaultRecipes } from './recipes'
+import { loadRecipes, createRecipe, createDefaultRecipes } from './recipes'
 import { renderRecipes, runDialogue } from './views'
 import { setFilter } from './filters'
 
@@ -31,4 +31,12 @@ resetBtn.addEventListener('click', (e) => {
     e.preventDefault()
     createDefaultRecipes()
     renderRecipes()
+})
+
+window.addEventListener('storage', (e) => {
+    if (e.key === 'recipes') {
+        // loadRecipes()
+        renderRecipes()
+        console.log('recipes updated')
+    }
 })
