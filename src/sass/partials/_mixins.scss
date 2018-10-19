@@ -43,6 +43,12 @@
         margin-bottom: 0;
     }
 }
+@mixin reverse-link-underline () {
+    text-decoration: none;
+    &:hover, &:focus {
+        text-decoration: underline;
+    }
+}
 
 @mixin frameGradient () {
     background: $wall-yellow-shadow; /* Old browsers */

@@ -8,7 +8,7 @@ $arrow-height: 15px;
   display: inline-block;
   position: relative;
   z-index: 1;
- 
+  
   select {
     cursor: pointer;
     box-shadow: none;
@@ -19,9 +19,10 @@ $arrow-height: 15px;
     padding: 0 calc((#{$arrow-width}*2)  + (#{$field-padding}*2)) 0 $field-padding;
     border-radius: $border-radius;
     border: $field-border;
-    outline: none;
     -webkit-appearance: none;
     -moz-appearance: none;
+
+    
   }
 
   &:before {
@@ -50,6 +51,13 @@ $arrow-height: 15px;
     background: $fat-free-cream;
     pointer-events: none;
     border-radius: $border-radius;
+  }
+
+  &:hover, &:focus {
+    background: $mozzarella;
+    &:after {
+      background: $mozzarella;
+    }
   }
 }
 

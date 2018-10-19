@@ -24,6 +24,10 @@ $checkbox-size: 3rem;
     background: $fat-free-cream;
     border-radius: $border-radius;
     transform: translateY(-50%);
+
+    &:hover, &:focus {
+        background: $mozzarella;
+    }
 }
 
 .checkbox-label .inner {
@@ -40,11 +44,6 @@ $checkbox-size: 3rem;
     opacity: 0;
     transition: transform 100ms, opacity 100ms;
 } 
-
-.checkbox-label input:focus+.outer,
-.checkbox-label input:hover+.outer {
-    // border-color: #7ec4c1;
-}
 
 .checkbox-label input:checked+.outer .inner {
     transform: rotate(56deg) skew(16deg) scale(1);

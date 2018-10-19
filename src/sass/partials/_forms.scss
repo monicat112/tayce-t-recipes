@@ -22,17 +22,24 @@
 %field-base {
     background: $fat-free-cream;
     @include novelty-body-text();
+    color: $brown;
     width: 100%;
     padding: 0;
     padding: $field-padding;
     border: none;
     border-bottom: $field-border;
     border-radius: $border-radius;
+    transition: all $short-transition $transition-ease;
+    &:hover, &:focus {
+        background: $mozzarella;
+    }
+    // &:focus {
+    //     border-color: $orange;
+    // }
 }
 
 input[type="text"] {
     $space-adjust: 4px;
-
     @extend %field-base;
     height: $input-height;
     padding-top: calc(#{$field-padding} + #{$space-adjust});
@@ -53,6 +60,7 @@ textarea {
 }
 
 /* placeholder */
+
 ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
     color: $dust;
   }

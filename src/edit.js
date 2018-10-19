@@ -3,6 +3,7 @@ import { renderIngredients, initializeEditPage } from './views'
 import { updateRecipe, removeRecipe } from './recipes'
 import { createIngredient } from './ingredients'
 import { imageList } from './default-content'
+import { handleFirstTab } from './focus-ring-fix'
 
 const recipeId = location.hash.substring(1)
 const titleEl = document.getElementById('recipe-title')
@@ -13,6 +14,8 @@ const imageSelectEl = document.getElementById('image-select')
 const deleteBtn = document.getElementById('delete-btn')
 
 initializeEditPage(recipeId)
+
+window.addEventListener('keydown', handleFirstTab);
 
 titleEl.addEventListener('input', (e) => {
     const newTitle = e.target.value.trim()

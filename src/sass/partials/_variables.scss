@@ -1,8 +1,11 @@
 // Colors 
 $cream: #F9EACA; // background
 $fat-free-cream: #fcf5e3; // fileds
+$mozzarella: #fefaf1; // hover fields
+
 $brown: #46321D; // text
 $dust: #9E8674;
+$pebble: #B8A299; // footer text
 $red: #DF3034;
 $redder: rgb(235, 69, 72);
 $orange: #FFA33E;
@@ -43,7 +46,12 @@ $font-size-h3: 3.7rem;
 // Form Fields
 $input-height: 4.7rem;
 $field-padding: 1.5rem;
-$field-border: 2px solid $brown;
+$field-border-size: 2px;
+$field-border: $field-border-size solid #000;
+
+// Animation
+$short-transition: 100ms;
+$transition-ease: ease-out;
 
 // Other
 $border-radius: 3px;
