@@ -10,6 +10,10 @@
     input {
         padding-left: 58px; /* image size + some extra*/
         background: transparent;
-        border-radius: 0;
+
+        &:hover, &:focus {
+            background: lighten($cream, 5);
+        }
     }
+    
 }

@@ -1,0 +1,16 @@
+.speech-bubble {
+    position: relative;
+    background: url('../../images/speech-bubble.svg') no-repeat;
+    background-size: contain;
+    background-position: center bottom;
+    padding-top: 36%; /* aspect ratio hack */
+    height: 0;
+}
+
+.speech__dialogue {
+    margin: 0;
+    @include novelty-body-text();
+    position: absolute;
+    top: 0;
+    padding: 10% 8% 0;
+}

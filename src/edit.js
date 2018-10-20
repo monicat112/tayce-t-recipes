@@ -37,10 +37,13 @@ effectEl.addEventListener('input', (e) => {
 
 ingredientBtn.addEventListener('click', (e) => {
     e.preventDefault()
-    const name = document.getElementById('recipe-ingredient').value
-    createIngredient(recipeId, name)
-    renderIngredients(recipeId)
-    document.getElementById('recipe-ingredient').value = ''
+    let ingredientEl = document.getElementById('recipe-ingredient').value.trim()
+    if (ingredientEl !== '') {
+        const name = ingredientEl
+        createIngredient(recipeId, name)
+        renderIngredients(recipeId)
+        ingredientEl = ''
+    }
 })
 
 imageSelectEl.addEventListener('change', (e) => {

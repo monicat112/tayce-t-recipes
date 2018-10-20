@@ -18,9 +18,10 @@
 * ~~Home search bar~~
 * ~~Home recipe card spacing~~
 * ~~Recipe cards - move link inside~~
-* Anti button outline script, only shows for tabbing
-* Don't allow adding ingredient without input first
+* ~~Anti button outline script, only shows for tabbing~~
+* ~~Don't allow adding ingredient without input first~~
 * Speech bubble background
+    * Webpack doesn't want to load the bg image, this looks like a promising solution https://stackoverflow.com/a/38989739/2811272
 * Speech bubble button
 * Auto-reload if the app is open in multiple tabs
     * This isn't working... the local data is changing but the stuff on the page isn't
@@ -33,3 +34,9 @@ window.addEventListener('storage', (e) => {
     }
 })
 ```
+
+Todo Bonus
+* Animate Tayce T
+* Animate search icon on focus
+* Animate ingredient images
+* Unbutton reset active state
