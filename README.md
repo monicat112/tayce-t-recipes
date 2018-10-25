@@ -10,6 +10,9 @@
 * Image selection
 * Typing text effect using Malarkey
 
+### Quirks
+* Any images that are used via CSS need to be included in the public/images folder AND the src/images folder. Otherwise webpack crashes.
+
 ## Todo
 
 * ~~Placeholder color~~
@@ -20,23 +23,13 @@
 * ~~Recipe cards - move link inside~~
 * ~~Anti button outline script, only shows for tabbing~~
 * ~~Don't allow adding ingredient without input first~~
-* Speech bubble background
-    * Webpack doesn't want to load the bg image, this looks like a promising solution https://stackoverflow.com/a/38989739/2811272
+* ~~Speech bubble background https://stackoverflow.com/a/38989739/2811272~~
 * Speech bubble button
 * Auto-reload if the app is open in multiple tabs
-    * This isn't working... the local data is changing but the stuff on the page isn't
+    * This isn't working... the local data is changing but the stuff on the page isn't. See notes-app index.js for reference.
 
-Autoreloading: See notes-app index.js
-```javascript
-window.addEventListener('storage', (e) => {
-    if (e.key === 'notes') {
-        renderNotes()
-    }
-})
-```
-
-Todo Bonus
-* Animate Tayce T
+## Todo Bonus
 * Animate search icon on focus
 * Animate ingredient images
 * Unbutton reset active state
+* Animate Tayce T

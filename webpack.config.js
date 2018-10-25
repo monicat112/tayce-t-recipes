@@ -28,15 +28,26 @@ module.exports = {
                 use: [
                     "style-loader", // creates style nodes from JS strings
                     "css-loader", // translates CSS into CommonJS
+                    "resolve-url-loader", // fixes issue where webpack can't use css background images
                     "sass-loader" // compiles Sass to CSS, using Node Sass by default
-                ]
+                ],
+            },
+            {
+                // fixes issue where webpack can't use css background images
+                test: /\.svg$/,
+                use: {
+                    loader: 'file-loader',
+                    options: {
+                        name: '../images/[name].[ext]'
+                    }
+                }
             }
         ]
     },
     devServer: {
         contentBase:path.resolve(__dirname, 'public'),
-        publicPath: '/scripts/',
-        open: true
+        open: true,
+        publicPath: '/scripts/'
     },
     devtool: 'source-map'
 }

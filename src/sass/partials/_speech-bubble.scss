@@ -1,6 +1,8 @@
 .speech-bubble {
     position: relative;
-    background: url('../../images/speech-bubble.svg') no-repeat;
+    background: url('../images/speech-bubble.svg');
+    // background: url('../images/yummy-meal-lg.png');
+    background-repeat: no-repeat;
     background-size: contain;
     background-position: center bottom;
     padding-top: 36%; /* aspect ratio hack */
