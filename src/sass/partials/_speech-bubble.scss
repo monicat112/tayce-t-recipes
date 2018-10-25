@@ -1,18 +1,32 @@
 .speech-bubble {
-    position: relative;
-    background: url('../images/speech-bubble.svg');
-    // background: url('../images/yummy-meal-lg.png');
     background-repeat: no-repeat;
-    background-size: contain;
-    background-position: center bottom;
-    padding-top: 36%; /* aspect ratio hack */
-    height: 0;
+    background-size: 100% 100%;
+    background-image: url('../images/speech-bubble-small.svg');
 }
 
 .speech__dialogue {
     margin: 0;
     @include novelty-body-text();
-    position: absolute;
-    top: 0;
-    padding: 10% 8% 0;
+    font-size: 2.8rem;
+    height: 21rem;
+    width: 70%;
+    margin-left: 15%;
+    padding-top: 14%;
+}
+
+@media (min-width: $break) {
+    .speech-bubble {
+        background-image: url('../images/speech-bubble.svg');
+    }
+
+    .speech__dialogue {
+        font-size: $font-size-secondary;
+        height: 25rem;
+    }
+}
+
+@media (min-width: $break-lg) {
+    .speech__dialogue {
+        padding-top: 7.5rem;
+    }
 }
