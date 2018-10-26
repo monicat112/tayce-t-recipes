@@ -190,11 +190,11 @@ const initializeIngredient = (recipeId, ingredient) => {
 
 const runDialogue = () => {
     const element = document.getElementById('dialogue')
-    const dialogueBtn = document.getElementById('dialogue-btn')
+    // const dialogueBtn = document.getElementById('dialogue-btn')
 
-    if (dialogueCount === 0) {
-        dialogueBtn.textContent = 'run dialogue'
-    }
+    // if (dialogueCount === 0) {
+    //     dialogueBtn.textContent = 'run dialogue'
+    // }
 
     const callback = (text) => {
         element.textContent = text
@@ -228,7 +228,7 @@ const runDialogue = () => {
 
     if (dialogueCount >= Object.keys(tayceTDialogue).length) {
         dialogueCount = 0
-        dialogueBtn.textContent = 'restart'
+        // dialogueBtn.textContent = 'restart'
     }
 }
 

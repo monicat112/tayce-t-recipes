@@ -1,4 +1,5 @@
 .speech-bubble {
+    position: relative;
     background-repeat: no-repeat;
     background-size: 100% 100%;
     background-image: url('../images/speech-bubble-small.svg');
@@ -8,10 +9,18 @@
     margin: 0;
     @include novelty-body-text();
     font-size: 2.8rem;
-    height: 21rem;
+    height: 24.5rem;
     width: 70%;
     margin-left: 15%;
     padding-top: 14%;
+}
+
+.speech__button {
+    @include un-button();
+    position: absolute;
+    transform: translateY(-50%);
+    right: 34px;
+    bottom: 25px;
 }
 
 @media (min-width: $break) {
@@ -21,7 +30,12 @@
 
     .speech__dialogue {
         font-size: $font-size-secondary;
-        height: 25rem;
+        height: 27.7rem;
+    }
+
+    .speech__button {
+        right: 55px;
+        bottom: 50px;
     }
 }
 

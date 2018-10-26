@@ -2,6 +2,15 @@ import uuidv4 from 'uuid/v4'
 import malarkey from 'malarkey'
 import { Ingredient, Recipe } from './classes'
 
+const activateStar = () => {
+    console.log('Star power!')
+}
+
+const deactivateStar = (callback) => {
+    console.log('Bye for now, Star.')
+    callback
+}
+
 // Dialogue
 const tayceTDialogue = {
     dialogueGreeting(callback, options) {
@@ -13,14 +22,17 @@ const tayceTDialogue = {
             .type('I really love to cook! ')
             .pause()
             .type('<3')
+            .call(activateStar)
     },
     dialogueRequest(callback, options) {
         malarkey(callback, options)
+            .call(deactivateStar(callback))
             .type('Would you help me update my recipe list? ')
             .pause()
             .type('I’ll make you something delicious if you do! ')
             .pause()
             .type('<3')
+            .call(activateStar)
     },
     dialogueInstructions(callback, options) {
         malarkey(callback, options)
@@ -31,12 +43,15 @@ const tayceTDialogue = {
             .type('or remove recipes... ')
             .pause()
             .type('if you really don’t like them.')
+            .call(activateStar)
     },
     dialogueMistake(callback, options) {
         malarkey(callback, options)
+            .call(deactivateStar)
             .type('If you make a mistake, just reset the recipes! ')
             .pause()
             .type('<3')
+            .call(activateStar)
     }
 }
 

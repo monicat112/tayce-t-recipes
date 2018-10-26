@@ -25,6 +25,8 @@
 * ~~Don't allow adding ingredient without input first~~
 * ~~Speech bubble background https://stackoverflow.com/a/38989739/2811272~~
 * Speech bubble button
+    * ~~Position~~
+    * Animate
 * Auto-reload if the app is open in multiple tabs
     * This isn't working... the local data is changing but the stuff on the page isn't. See notes-app index.js for reference.
 
