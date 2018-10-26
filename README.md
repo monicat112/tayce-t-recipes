@@ -23,15 +23,18 @@
 * ~~Recipe cards - move link inside~~
 * ~~Anti button outline script, only shows for tabbing~~
 * ~~Don't allow adding ingredient without input first~~
-* ~~Speech bubble background https://stackoverflow.com/a/38989739/2811272~~
+* Speech bubble background
+    * ~~Webpack doesn't load css bg images https://stackoverflow.com/a/38989739/2811272~~
+    * Text needs to be bigger at desktop, see mockup
 * Speech bubble button
     * ~~Position~~
-    * Animate
+    * Refactor text to use just malarkey and not weird counting system
+    * Animate!
 * Auto-reload if the app is open in multiple tabs
     * This isn't working... the local data is changing but the stuff on the page isn't. See notes-app index.js for reference.
 
 ## Todo Bonus
 * Animate search icon on focus
 * Animate ingredient images
-* Unbutton reset active state
-* Animate Tayce T
+* Give the reset button an active state?
+* Animate Tayce T?

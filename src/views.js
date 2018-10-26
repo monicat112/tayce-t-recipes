@@ -189,47 +189,47 @@ const initializeIngredient = (recipeId, ingredient) => {
 }
 
 const runDialogue = () => {
-    const element = document.getElementById('dialogue')
+    // const element = document.getElementById('dialogue')
     // const dialogueBtn = document.getElementById('dialogue-btn')
 
     // if (dialogueCount === 0) {
     //     dialogueBtn.textContent = 'run dialogue'
     // }
 
-    const callback = (text) => {
-        element.textContent = text
-    }
+    // const callback = (text) => {
+    //     element.textContent = text
+    // }
 
-    const options = {
-        typeSpeed: 30,
-        deleteSpeed: 1,
-        pauseDuration: 250,
-        repeat: false
-    }
+    // const options = {
+    //     typeSpeed: 30,
+    //     deleteSpeed: 1,
+    //     pauseDuration: 250,
+    //     repeat: false
+    // }
 
-    switch (dialogueCount) {
-        case 0:
-            tayceTDialogue.dialogueGreeting(callback, options)
-            break;
-        case 1:
-            tayceTDialogue.dialogueRequest(callback, options)
-            break;
-        case 2:
-            tayceTDialogue.dialogueInstructions(callback, options)
-            break;
-        case 3:
-            tayceTDialogue.dialogueMistake(callback, options)
-            break;
-        default:
-            break;
-    }
+    // switch (dialogueCount) {
+    //     case 0:
+    //         tayceTDialogue.dialogueGreeting(callback, options)
+    //         break;
+    //     case 1:
+    //         tayceTDialogue.dialogueRequest(callback, options)
+    //         break;
+    //     case 2:
+    //         tayceTDialogue.dialogueInstructions(callback, options)
+    //         break;
+    //     case 3:
+    //         tayceTDialogue.dialogueMistake(callback, options)
+    //         break;
+    //     default:
+    //         break;
+    // }
 
-    dialogueCount++
+    // dialogueCount++
 
-    if (dialogueCount >= Object.keys(tayceTDialogue).length) {
-        dialogueCount = 0
-        // dialogueBtn.textContent = 'restart'
-    }
+    // if (dialogueCount >= Object.keys(tayceTDialogue).length) {
+    //     dialogueCount = 0
+    //     // dialogueBtn.textContent = 'restart'
+    // }
 }
 
 export { renderRecipes, renderIngredients, initializeEditPage, runDialogue, stop }
