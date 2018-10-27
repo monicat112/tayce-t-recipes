@@ -1,19 +1,28 @@
 import './sass/style.scss'
 import { loadRecipes, createRecipe, createDefaultRecipes } from './recipes'
-import { renderRecipes, runDialogue } from './views'
+import { renderRecipes } from './views'
 import { setFilter } from './filters'
+import { tayceTDialogue } from './taycet-type'
 
 const dialogueBtn = document.getElementById('dialogue-btn')
 const newRecipeBtn = document.getElementById('create-recipe')
 const searchEl = document.getElementById('search')
 const resetBtn = document.getElementById('reset-recipes')
+let dialogueCount = 0;
 
 renderRecipes()
-runDialogue()
+tayceTDialogue(dialogueCount, (stopped) => {
+    console.log(`stopped: ${stopped}`)
+})
 
 dialogueBtn.addEventListener('click', (e) => {
     e.preventDefault()
-    runDialogue()
+    console.log(`count: ${dialogueCount}`)
+    dialogueCount++
+    (dialogueCount > 3) && (dialogueCount = 0)
+    tayceTDialogue(dialogueCount, (stopped) => {
+        console.log(`stopped: ${stopped}`)
+    })
 })
 
 newRecipeBtn.addEventListener('click', (e) => {

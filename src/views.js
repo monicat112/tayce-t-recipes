@@ -1,10 +1,9 @@
 import { getRecipes } from './recipes'
 import { toggleIngredient, haveIngredients, removeIngredient } from './ingredients'
 import { getFilter } from './filters'
-import { imageList, tayceTDialogue } from './default-content'
+import { imageList } from './default-content'
 
 const ingretientsListEl = document.getElementById('recipe-ingredients-list')
-let dialogueCount = 0
 
 const generateRecipeCardDOM = (recipe) => {
     const recipeEl = document.createElement('div')
@@ -188,48 +187,4 @@ const initializeIngredient = (recipeId, ingredient) => {
     return ingredientEl
 }
 
-const runDialogue = () => {
-    // const element = document.getElementById('dialogue')
-    // const dialogueBtn = document.getElementById('dialogue-btn')
-
-    // if (dialogueCount === 0) {
-    //     dialogueBtn.textContent = 'run dialogue'
-    // }
-
-    // const callback = (text) => {
-    //     element.textContent = text
-    // }
-
-    // const options = {
-    //     typeSpeed: 30,
-    //     deleteSpeed: 1,
-    //     pauseDuration: 250,
-    //     repeat: false
-    // }
-
-    // switch (dialogueCount) {
-    //     case 0:
-    //         tayceTDialogue.dialogueGreeting(callback, options)
-    //         break;
-    //     case 1:
-    //         tayceTDialogue.dialogueRequest(callback, options)
-    //         break;
-    //     case 2:
-    //         tayceTDialogue.dialogueInstructions(callback, options)
-    //         break;
-    //     case 3:
-    //         tayceTDialogue.dialogueMistake(callback, options)
-    //         break;
-    //     default:
-    //         break;
-    // }
-
-    // dialogueCount++
-
-    // if (dialogueCount >= Object.keys(tayceTDialogue).length) {
-    //     dialogueCount = 0
-    //     // dialogueBtn.textContent = 'restart'
-    // }
-}
-
-export { renderRecipes, renderIngredients, initializeEditPage, runDialogue, stop }
+export { renderRecipes, renderIngredients, initializeEditPage, stop }

@@ -1,94 +1,5 @@
 import uuidv4 from 'uuid/v4'
-import malarkey from 'malarkey'
 import { Ingredient, Recipe } from './classes'
-
-
-// dialogue stuff needs its own file
-
-const dialogueBtn = document.getElementById('dialogue-btn')
-
-
-/*
- * Dialogue
- * https://github.com/yuanqing/malarkey
- * https://codepen.io/mocasalter/pen/KGJPxK
- * 
- * This all works on the assumption that hte button isn't visible while the text is running
- * 
- * There's probably a better way to do this, but I had a lot of trouble 
- * getting malarkey call()'s & onClicks to play nice together. 
- * Suggestions appreciated.
- */
-
-const element = document.getElementById('dialogue')
-
-const callback = (text) => {
-    element.textContent = text
-}
-
-const options = {
-    // typeSpeed: 30,
-    typeSpeed: 1,
-    deleteSpeed: 1,
-    pauseDuration: 250,
-    repeat: false
-}
-
-let dialogueCount = 0;
-
-const activateStar = () => {
-    console.log('do star things')
-}
-
-const m = malarkey(callback, options)
-
-const tayceTDialogue = [
-    m.type('Oh, hello there, Mario! ')
-        .pause()
-        .type('I’m Tayce T. ')
-        .pause()
-        .type('I really love to cook! ')
-        .pause()
-        .type('<3'),
-]
-
-// this really needs to be on the view page
-dialogueBtn.addEventListener('click', () => {
-    // this neeeds to be a separate function taht's called with every click
-    switch (dialogueCount) {
-        case 0:
-            m.clear()
-                .type('Would you help me update my recipe list? ')
-                .pause()
-                .type('I’ll make you something delicious if you do! ')
-                .pause()
-                .type('<3')
-                .call(activateStar)
-            break;
-        case 1:
-            m.clear()
-                .type('You can edit recipes, ')
-                .pause()
-                .type('add new ones ')
-                .pause()
-                .type('or remove recipes... ')
-                .pause()
-                .type('if you really don’t like them.')
-                .call(activateStar)
-            break;
-        case 2:
-            m.clear()
-                .type('If you make a mistake, just reset the recipes! ')
-                .pause()
-                .type('<3')
-                .call(activateStar)
-            break;
-        default:
-            break;
-    }
-    // this count isn't going up 
-    dialogueCount++
-})
 
 // Images - see classess.js for potential improvement
 const imageList = [
@@ -162,4 +73,4 @@ const mistake = new Recipe(uuidv4(), 'Shroom Souffle?', mistakeImage, 'Deals 3 H
 const defaultRecipes = [yoshiCookie, fireFlower, honeyShroom, mistake]
 const getDefaultRecipes = () => defaultRecipes
 
-export { getDefaultRecipes, imageList, tayceTDialogue }
+export { getDefaultRecipes, imageList }
