@@ -26,10 +26,10 @@
 * Speech bubble background
     * ~~Webpack doesn't load css bg images https://stackoverflow.com/a/38989739/2811272~~
     * Text needs to be bigger at desktop, see mockup
-* Speech bubble button
+* ~~Speech bubble button~~
     * ~~Position~~
-    * Refactor text to use just malarkey and not weird counting system
-    * Animate!
+    * ~~Refactor text to use just malarkey and not weird counting system~~
+    * ~~Animate!~~
 * Auto-reload if the app is open in multiple tabs
     * This isn't working... the local data is changing but the stuff on the page isn't. See notes-app index.js for reference.
 

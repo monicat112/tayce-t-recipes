@@ -8,21 +8,13 @@ const dialogueBtn = document.getElementById('dialogue-btn')
 const newRecipeBtn = document.getElementById('create-recipe')
 const searchEl = document.getElementById('search')
 const resetBtn = document.getElementById('reset-recipes')
-let dialogueCount = 0;
 
 renderRecipes()
-tayceTDialogue(dialogueCount, (stopped) => {
-    console.log(`stopped: ${stopped}`)
-})
+tayceTDialogue()
 
 dialogueBtn.addEventListener('click', (e) => {
     e.preventDefault()
-    console.log(`count: ${dialogueCount}`)
-    dialogueCount++
-    (dialogueCount > 3) && (dialogueCount = 0)
-    tayceTDialogue(dialogueCount, (stopped) => {
-        console.log(`stopped: ${stopped}`)
-    })
+    tayceTDialogue()
 })
 
 newRecipeBtn.addEventListener('click', (e) => {

@@ -1,25 +1,20 @@
 import malarkey from 'malarkey'
 
 /*
- * Dialogue
+ * Tayce T's Dialogue
+ *
  * https://github.com/yuanqing/malarkey
  * https://codepen.io/mocasalter/pen/KGJPxK
- * 
- * This all works on the assumption that hte button isn't visible while the text is running
- * 
- * There's probably a better way to do this, but I had a lot of trouble 
- * getting malarkey call()'s & onClicks to play nice together. 
- * Suggestions appreciated.
  */
 
+let dialogueCount = 0
+const starBtn = document.getElementById('dialogue-btn')
+const starBtnImg = document.getElementById('dialogue-btn-img')
 const element = document.getElementById('dialogue')
-
-const callback = (text) => {
-    element.textContent = text
-}
+const callback = (text) => element.textContent = text
 
 const options = {
-    typeSpeed: 30,
+    typeSpeed: 1,
     deleteSpeed: 1,
     pauseDuration: 250,
     repeat: false
@@ -27,18 +22,35 @@ const options = {
 
 const m = malarkey(callback, options)
 
+const btnImageStar = () => {
+    starBtnImg.setAttribute('src', './images/mario-star.svg')
+}
+
+const btnImageRedo = () => {
+    starBtnImg.setAttribute('src', './images/redo.svg')
+}
+
 const activateStar = (starCallback) => {
-    console.log('do star things')
+    starBtn.disabled = false
+    if (dialogueCount > 3) {
+        btnImageRedo()
+    }
     starCallback()
 }
 
-const tayceTDialogue = (dialogueCount, tCallback) => {
-    tCallback(m.isStopped())
-    // this works great! but we need to cancel the counter going up if it returns
+const tayceTDialogue = () => {
+    starBtn.disabled = true
+
+    if (dialogueCount > 3) {
+        dialogueCount = 0
+        btnImageStar()
+    }
+
+    // if the text isn't done typing, stop button clicks from doing anything
     if (!m.isStopped()) {
-        console.log('stopped 2')
         return
     }
+
     switch (dialogueCount) {
         case 0: 
             m.clear()
@@ -49,9 +61,9 @@ const tayceTDialogue = (dialogueCount, tCallback) => {
                 .type('I really love to cook! ')
                 .pause()
                 .type('<3')
+                .call(activateStar)
             break;
         case 1:
-            console.log('case 1')
             m.clear()
                 .type('Would you help me update my recipe list? ')
                 .pause()
@@ -61,7 +73,6 @@ const tayceTDialogue = (dialogueCount, tCallback) => {
                 .call(activateStar)
             break;
         case 2:
-            console.log('case 2')
             m.clear()
                 .type('You can edit recipes, ')
                 .pause()
@@ -73,7 +84,6 @@ const tayceTDialogue = (dialogueCount, tCallback) => {
                 .call(activateStar)
             break;
         case 3:
-            console.log('case 3')
             m.clear()
                 .type('If you make a mistake, just reset the recipes! ')
                 .pause()
@@ -83,6 +93,8 @@ const tayceTDialogue = (dialogueCount, tCallback) => {
         default:
             break;
     }
+
+    dialogueCount++
 }
 
 export { tayceTDialogue }

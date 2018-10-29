@@ -15,12 +15,41 @@
     padding-top: 14%;
 }
 
+
+
 .speech__button {
+    $short-transition: 500ms;
     @include un-button();
     position: absolute;
     transform: translateY(-50%);
     right: 34px;
     bottom: 25px;
+    opacity: 1;
+    transition: opacity $short-transition $transition-ease;
+
+    img {
+        will-change: transform;
+        animation: swing-star 1.6s linear infinite normal forwards;
+    }
+    
+    &:disabled {
+        opacity: 0.8;
+        img {
+            animation: none;
+        }
+    }
+}
+
+@keyframes swing-star {
+    0%, 50%, 100% {
+        transform: rotate(0) scale(1);
+    }
+    30% {
+        transform: rotate(-10deg) scale(1.04);
+    }
+    80% {
+        transform: rotate(10deg) scale(1.04);
+    }
 }
 
 @media (min-width: $break) {
