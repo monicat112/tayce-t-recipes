@@ -82,4 +82,4 @@ if (newSiteVisitor()) {
 
 loadRecipes()
 
-export { saveRecipes, getRecipes, createRecipe, removeRecipe, updateRecipe, createDefaultRecipes }
+export { saveRecipes, getRecipes, createRecipe, removeRecipe, updateRecipe, createDefaultRecipes, loadRecipes }

@@ -1,6 +1,6 @@
 import './sass/style.scss'
 import { renderIngredients, initializeEditPage } from './views'
-import { updateRecipe, removeRecipe } from './recipes'
+import { loadRecipes, updateRecipe, removeRecipe } from './recipes'
 import { createIngredient } from './ingredients'
 import { imageList } from './default-content'
 import { handleFirstTab } from './focus-ring-fix'
@@ -63,7 +63,7 @@ deleteBtn.addEventListener('click', (e) => {
 
 window.addEventListener('storage', (e) => {
     if (e.key === 'recipes') {
+        loadRecipes()
         initializeEditPage(recipeId)
-        console.log('recipes updated')
     }
 })

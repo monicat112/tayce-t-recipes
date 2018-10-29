@@ -99,6 +99,7 @@ const renderIngredients = (recipeId) => {
 }
 
 const initializeEditPage = (recipeId) => {
+        
     const titleEl = document.getElementById('recipe-title')
     const pageTitleEl = document.getElementById('page-title')
     const effectEl = document.getElementById('recipe-effect')

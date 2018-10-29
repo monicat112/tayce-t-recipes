@@ -23,18 +23,18 @@
 * ~~Recipe cards - move link inside~~
 * ~~Anti button outline script, only shows for tabbing~~
 * ~~Don't allow adding ingredient without input first~~
-* Speech bubble background
+* ~~Speech bubble background~~
     * ~~Webpack doesn't load css bg images https://stackoverflow.com/a/38989739/2811272~~
-    * Text needs to be bigger at desktop, see mockup
+    * ~~Text needs to be bigger at desktop, see mockup~~
 * ~~Speech bubble button~~
     * ~~Position~~
     * ~~Refactor text to use just malarkey and not weird counting system~~
     * ~~Animate!~~
-* Auto-reload if the app is open in multiple tabs
-    * This isn't working... the local data is changing but the stuff on the page isn't. See notes-app index.js for reference.
+* ~~Auto-reload if the app is open in multiple tabs~~
+    * ~~In views.js, `initializeEditPage() { const recipes = getRecipes() }` doesn't seem to be pulling the updated info...~~ just needed to run `loadRecipes` before getting the new data with `initializeEditPage` or `renderRecipes`
 
 ## Todo Bonus
-* Animate search icon on focus
-* Animate ingredient images
-* Give the reset button an active state?
-* Animate Tayce T?
+* ~~Animate search icon on focus~~
+* ~~Animate ingredient images~~
+* Browsertest
+* ~~Give the reset button an active state?~~

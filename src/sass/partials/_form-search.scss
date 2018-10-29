@@ -1,12 +1,14 @@
 .search-wrapper {
     position: relative;
     margin: 6.5rem auto 8rem;
+
     img {
         position: absolute;
         top: 50%;
         left: 11px;
         transform: translateY(-50%);
     }
+
     input {
         padding-left: 58px; /* image size + some extra*/
         background: transparent;
@@ -15,5 +17,20 @@
             background: lighten($cream, 5);
         }
     }
-    
+}
+
+#search:focus + img {
+    animation: boing 500ms ease;
+}
+
+@keyframes boing {
+    from {
+        transform:  translateY(-50%) scale(1);
+    }
+    40% {
+        transform:  translateY(-50%) scale(1.1);
+    }
+    to {
+        transform:  translateY(-50%) scale(1);
+    } 
 }

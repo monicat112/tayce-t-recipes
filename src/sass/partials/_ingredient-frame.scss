@@ -1,20 +1,19 @@
+$curve: 0.215, 0.61, 0.355, 1;
+
 .ingredient-frame {
     @include box-border();
     height: 270px;
+    overflow: hidden;
     padding-bottom: 24px;
     display: flex;
     align-items: flex-end;
     justify-content: center;
     @include frameGradient();
-    
 }
 
 .ingredient-frame__item {
     position: relative;
     z-index: 0;
-    > img {
-        display: block;
-    }
     &:before {
         content: '';
         position: absolute;
@@ -26,6 +25,25 @@
         opacity: 0.6;
         @include shadowGradient();
         z-index: -1;
+        opacity: 0;
+        animation: drop-shadow 400ms ease 600ms 1 normal forwards;
     }
 }
 
+.ingredient-frame__item > img {
+    display: block;
+    transform: translateY(-250px);
+    animation: drop-ingredient 500ms cubic-bezier($curve) 500ms 1 normal forwards;
+}
+
+@keyframes drop-ingredient {
+    to {
+        transform: translateY(0)
+    }
+}
+
+@keyframes drop-shadow {
+    to {
+        opacity: 1;
+    }
+}

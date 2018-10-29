@@ -36,8 +36,7 @@ resetBtn.addEventListener('click', (e) => {
 
 window.addEventListener('storage', (e) => {
     if (e.key === 'recipes') {
-        // loadRecipes()
+        loadRecipes()
         renderRecipes()
-        console.log('recipes updated')
     }
 })
