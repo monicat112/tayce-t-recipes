@@ -29,3 +29,13 @@
     align-items: center;
     justify-content: space-between;
 }
+
+@media (min-width: $break) {
+    .main {
+        min-height: calc(100vh - 275px); // 275 = approximate header height
+    }
+    
+    .main--home {
+        min-height: calc(100vh - 940px); // 940 = approximate header height
+    }
+}

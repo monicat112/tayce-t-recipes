@@ -26,14 +26,14 @@ $curve: 0.215, 0.61, 0.355, 1;
         @include shadowGradient();
         z-index: -1;
         opacity: 0;
-        animation: drop-shadow 400ms ease 600ms 1 normal forwards;
+        animation: drop-shadow 400ms ease 1100ms 1 normal forwards;
     }
 }
 
 .ingredient-frame__item > img {
     display: block;
     transform: translateY(-250px);
-    animation: drop-ingredient 500ms cubic-bezier($curve) 500ms 1 normal forwards;
+    animation: drop-ingredient 500ms cubic-bezier($curve) 1000ms 1 normal forwards;
 }
 
 @keyframes drop-ingredient {

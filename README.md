@@ -2,6 +2,7 @@
 
 `$ npm run dev-server` to run the dev environment  
 `$ npm i -g surge` to install the surge CLI globally, otherwise build won't work  
+
 `$ npm run build` to compile and push live to the [surge](https://surge.sh/) url defined in package.json
 
 ## Features
@@ -9,32 +10,18 @@
 * Default recipe content
 * Image selection
 * Typing text effect using Malarkey
-
-### Quirks
-* Any images that are used via CSS need to be included in the public/images folder AND the src/images folder. Otherwise webpack crashes.
+* Auto-reloading data on all open tabs
 
 ## Todo
 
-* ~~Placeholder color~~
-* ~~Button styles~~
-* ~~Logo~~
-* ~~Home search bar~~
-* ~~Home recipe card spacing~~
-* ~~Recipe cards - move link inside~~
-* ~~Anti button outline script, only shows for tabbing~~
-* ~~Don't allow adding ingredient without input first~~
-* ~~Speech bubble background~~
-    * ~~Webpack doesn't load css bg images https://stackoverflow.com/a/38989739/2811272~~
-    * ~~Text needs to be bigger at desktop, see mockup~~
-* ~~Speech bubble button~~
-    * ~~Position~~
-    * ~~Refactor text to use just malarkey and not weird counting system~~
-    * ~~Animate!~~
-* ~~Auto-reload if the app is open in multiple tabs~~
-    * ~~In views.js, `initializeEditPage() { const recipes = getRecipes() }` doesn't seem to be pulling the updated info...~~ just needed to run `loadRecipes` before getting the new data with `initializeEditPage` or `renderRecipes`
+* ~~Favicon~~
+* Tayce T svg needs to scale better at mobile
+    * Can't set it as a linked <img> becuase then the png doesn't load in...
+    * Might need to do a ratio hack? https://css-tricks.com/aspect-ratios-svg/
+* Put code on github
+* Add links to about
+* Fix up Twitter
 
 ## Todo Bonus
-* ~~Animate search icon on focus~~
-* ~~Animate ingredient images~~
 * Browsertest
-* ~~Give the reset button an active state?~~
+* CSS autoprefixing with webpack
