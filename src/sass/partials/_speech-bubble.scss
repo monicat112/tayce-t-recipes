@@ -15,21 +15,22 @@
     padding-top: 14%;
 }
 
-
-
 .speech__button {
     $short-transition: 500ms;
     @include un-button();
     position: absolute;
     transform: translateY(-50%);
-    right: 34px;
-    bottom: 25px;
+    // right: 38px;
+    right: 12%;
+    bottom: 13%;
+    // bottom: 24px
     opacity: 1;
     transition: opacity $short-transition $transition-ease;
 
     img {
         will-change: transform;
         animation: swing-star 1.4s linear infinite normal forwards;
+        height: 25px;
     }
     
     &:disabled {
@@ -65,6 +66,9 @@
     .speech__button {
         right: 55px;
         bottom: 50px;
+        img {
+            height: auto;
+        }
     }
 }
 

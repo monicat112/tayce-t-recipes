@@ -1,5 +1,3 @@
-$curve: 0.215, 0.61, 0.355, 1;
-
 .ingredient-frame {
     @include box-border();
     height: 270px;
@@ -33,7 +31,7 @@ $curve: 0.215, 0.61, 0.355, 1;
 .ingredient-frame__item > img {
     display: block;
     transform: translateY(-250px);
-    animation: drop-ingredient 500ms cubic-bezier($curve) 1000ms 1 normal forwards;
+    animation: drop-ingredient 350ms ease-in 1000ms 1 normal forwards;
 }
 
 @keyframes drop-ingredient {

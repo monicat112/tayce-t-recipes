@@ -13,15 +13,11 @@
 * Auto-reloading data on all open tabs
 
 ## Todo
-
+* Edge has some JS bugs. Fixable?
+    * Ingredients list doesn't load
+    * Image list doesn't load
 * ~~Favicon~~
-* Tayce T svg needs to scale better at mobile
-    * Can't set it as a linked <img> becuase then the png doesn't load in...
-    * Might need to do a ratio hack? https://css-tricks.com/aspect-ratios-svg/
+* ~~Adjust test spacing one more time~~
 * Put code on github
 * Add links to about
-* Fix up Twitter
-
-## Todo Bonus
-* Browsertest
-* CSS autoprefixing with webpack
+* ~~Fix up Twitter~~

@@ -42,7 +42,7 @@ ingredientBtn.addEventListener('click', (e) => {
         const name = ingredientEl
         createIngredient(recipeId, name)
         renderIngredients(recipeId)
-        ingredientEl = ''
+        document.getElementById('recipe-ingredient').value = ''
     }
 })
 
