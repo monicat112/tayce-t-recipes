@@ -6,7 +6,7 @@
   "scripts": {
     "open": "http-server -a localhost -p 8080",
     "dev-server": "webpack-dev-server --mode development",
-    "build:go-live": "surge .\\public monica-salter.surge.sh",
+    "build:go-live": "surge .\\docs monica-salter.surge.sh",
     "build": "webpack --mode production && npm run build:go-live"
   },
   "author": "",
