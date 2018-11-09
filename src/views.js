@@ -90,6 +90,8 @@ const renderIngredients = (recipeId) => {
     const recipes = getRecipes()
     const recipe = recipes.find(recipe => recipe.id === recipeId)
 
+    console.log('doing ingredients things')
+
     ingretientsListEl.innerHTML = ''
     
     recipe.ingredients.forEach((ingredient) => {
@@ -145,6 +147,7 @@ const initializeEditPage = (recipeId) => {
 const initializeIngredient = (recipeId, ingredient) => {
     const ingredientEl = document.createElement('li')
     const label = document.createElement('label')
+    const labelText = document.createElement('span') // do this part next
     const checkbox = document.createElement('input')
     const outerCheckbox = document.createElement('div')
     const innerCheckbox = document.createElement('div')
@@ -154,24 +157,27 @@ const initializeIngredient = (recipeId, ingredient) => {
     // set id
     ingredientEl.id = idName
     
-    // set label
+    // set label (but not text)
     ingredientEl.appendChild(label)
-    label.textContent = ingredient.name
     label.classList.add('checkbox-label')
+
+    // set checkbox input
+    checkbox.setAttribute('type', 'checkbox')
+    checkbox.checked = ingredient.available
+    label.appendChild(checkbox) 
+    checkbox.addEventListener('change', (e) => {
+        toggleIngredient(ingredient)
+    })
 
     // set checkbox items for CSS
     outerCheckbox.classList.add('outer')
     innerCheckbox.classList.add('inner')
-    label.prepend(outerCheckbox)
+    label.appendChild(outerCheckbox) 
     outerCheckbox.appendChild(innerCheckbox)  
 
-    // set checkbox
-    checkbox.setAttribute('type', 'checkbox')
-    checkbox.checked = ingredient.available
-    label.prepend(checkbox)
-    checkbox.addEventListener('change', (e) => {
-        toggleIngredient(ingredient)
-    })
+    // set label text
+    labelText.textContent = ingredient.name
+    label.appendChild(labelText)
 
     // create remove link
     remove.textContent = 'remove'
