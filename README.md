@@ -5,14 +5,14 @@ A Paper Mario themed recipe app made with vanilla JS.
 ## Features
 
 * Changed data auto-reloads on all open tabs
-* Default recipe content (local storage data)
+* Default, reset-able recipe content (local storage data)
 * Image selection
 * Typing text effect using [Malarkey](https://github.com/yuanqing/malarkey)
 * CSS animations
 
 ## How To
 
-`$ npm run dev-server`
+`$ npm run dev-server`  
 Runs the dev environment
 
 `$ npm i -g surge`  
