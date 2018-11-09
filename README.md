@@ -12,9 +12,11 @@ A Paper Mario themed recipe app made with vanilla JS.
 
 ## How To
 
-**Run Dev Environment**
 `$ npm run dev-server`
+Runs the dev environment
 
-**Run Build**
-`$ npm i -g surge` to install the surge CLI globally, otherwise build won't work  
-`$ npm run build` to compile and push live to the [surge](https://surge.sh/) url defined in package.json
+`$ npm i -g surge`  
+Installs the [surge](https://surge.sh/) CLI globally, otherwise build won't work
+
+`$ npm run build`  
+Compiles and uploads to the surge url defined in package.json
