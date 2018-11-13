@@ -39,8 +39,9 @@ module.exports = (env) => {
                         },
                         // 'style-loader',
                         'css-loader',
-                        'sass-loader'
-                        //'resolve-url-loader' // fixes issue where webpack can't use css background images
+                        'sass-loader',
+                        // this fixes loader issue? https://www.npmjs.com/package/resolve-url-loader
+                        'resolve-url-loader' // fixes issue where webpack can't use css background images
                     ]
                 },
                 {
@@ -69,7 +70,7 @@ module.exports = (env) => {
         },
         plugins : [
             new MiniCssExtractPlugin({
-                filename: '../css/[name].css',
+                filename: '../css/style.css',
             })
         ],
         devtool: isProduction ? 'source-map' : 'cheap-module-eval-source-map',
