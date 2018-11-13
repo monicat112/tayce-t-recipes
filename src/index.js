@@ -1,8 +1,9 @@
-import './sass/style.scss'
 import { loadRecipes, createRecipe, createDefaultRecipes } from './recipes'
 import { renderRecipes } from './views'
 import { setFilter } from './filters'
 import { tayceTDialogue } from './taycet-type'
+import 'normalize.scss/normalize.scss'
+import './sass/style.scss'
 
 const dialogueBtn = document.getElementById('dialogue-btn')
 const newRecipeBtn = document.getElementById('create-recipe')

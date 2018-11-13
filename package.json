@@ -4,10 +4,10 @@
   "description": "",
   "main": "input.js",
   "scripts": {
-    "open": "http-server -a localhost -p 8080",
-    "dev-server": "webpack-dev-server --mode development",
-    "build:go-live": "surge .\\docs monica-salter.surge.sh",
-    "build": "webpack --mode production && npm run build:go-live"
+    "dev-server": "webpack-dev-server",
+    "build:prod": "webpack -p --env production",
+    "build:dev": "webpack --mode=development",
+    "go-live": "surge .\\docs monica-salter.surge.sh"
   },
   "author": "",
   "license": "MIT",
@@ -17,9 +17,11 @@
     "@babel/polyfill": "^7.0.0",
     "@babel/preset-env": "^7.0.0",
     "babel-loader": "^8.0.2",
+    "babel-plugin-transform-class-properties": "^6.24.1",
     "babel-plugin-transform-object-rest-spread": "^6.26.0",
     "css-loader": "^1.0.0",
     "file-loader": "^2.0.0",
+    "mini-css-extract-plugin": "^0.4.4",
     "node-sass": "^4.9.3",
     "resolve-url-loader": "^3.0.0",
     "sass-loader": "^7.1.0",

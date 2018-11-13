@@ -1,9 +1,10 @@
-import './sass/style.scss'
 import { renderIngredients, initializeEditPage } from './views'
 import { loadRecipes, updateRecipe, removeRecipe } from './recipes'
 import { createIngredient } from './ingredients'
 import { imageList } from './default-content'
 import { handleFirstTab } from './focus-ring-fix'
+import 'normalize.scss/normalize.scss'
+import './sass/style.scss'
 
 const recipeId = location.hash.substring(1)
 const titleEl = document.getElementById('recipe-title')

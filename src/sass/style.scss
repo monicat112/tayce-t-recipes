@@ -1,28 +1,38 @@
 /* base */
-@import '../../node_modules/normalize.scss/normalize.scss';
-@import 'partials/mixins';
-@import 'partials/variables';
-@import 'partials/base';
-@import 'partials/page';
-@import 'partials/button-base';
-@import 'partials/buttons';
-@import 'partials/links';
-@import 'partials/lists';
-@import 'partials/text';
+/*@import '../../node_modules/normalize.scss/normalize.scss';*/
+// @import './partials/mixins';
+// @import './partials/variables';
+// @import './partials/base';
+// @import './partials/page';
+// @import './partials/lists';
+// @import './partials/text';
 
-/* forms */
-@import 'partials/forms';
-@import 'partials/form-select';
-@import 'partials/form-checkbox';
-@import 'partials/form-search';
-@import 'partials/focus-ring-fix';
+// /* buttons, links */
+// @import './partials/button-base';
+// @import './partials/buttons';
+// @import './partials/links';
 
-/* objects */
-@import 'partials/media-block';
-@import 'partials/button-groups';
-@import 'partials/list-box';
-@import 'partials/recipe-card';
-@import 'partials/ingredient-frame';
-@import 'partials/ingredient-list';
-@import 'partials/speech-bubble';
-@import 'partials/utility';
+// /* forms */
+// @import './partials/forms';
+// @import './partials/form-select';
+// @import './partials/form-checkbox';
+// @import './partials/form-search';
+// @import './partials/focus-ring-fix';
+
+// /* objects */
+// @import './partials/media-block';
+// @import './partials/button-groups';
+// @import './partials/list-box';
+// @import './partials/recipe-card';
+// @import './partials/ingredient-frame';
+// @import './partials/ingredient-list';
+// @import './partials/speech-bubble';
+// @import './partials/utility';
+
+body {
+    color: palevioletred;
+}
+
+img, svg {
+    display: none;
+}

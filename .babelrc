@@ -1,0 +1,9 @@
+{
+    "presets": [
+      "@babel/env"
+    ],
+    "plugins": [
+      "transform-class-properties"
+    ]
+  }
+  
