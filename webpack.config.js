@@ -1,54 +1,47 @@
-const path = require('path') 
-require('@babel/polyfill')
+const path = require('path');
+const ExtractTextPlugin = require('extract-text-webpack-plugin')
 
-module.exports = {
-    entry: {
-        index: ['@babel/polyfill', './src/index.js'],
-        edit: ['@babel/polyfill', './src/edit.js']
-    },
+// exporting a function https://webpack.js.org/configuration/configuration-types/#exporting-a-function
+module.exports = (env) => {
+  const isProduction = env === 'production'
+  const CSSExtract = new ExtractTextPlugin('styles.css')
+
+  return {
+
+    entry: './src/app.js',
     output: {
-        path: path.resolve(__dirname, 'docs/scripts'),
-        filename: '[name]-bundle.js'
+      path: path.join(__dirname, 'docs'),
+      filename: 'bundle.js'
     },
     module: {
-        rules: [
-            {
-                test: /\.js$/,
-                exclude: /node_modules/,
-                use: {
-                    loader: 'babel-loader',
-                    options: {
-                        presets: ['@babel/env'],
-                        plugins: ['transform-object-rest-spread']
-                    }
-                }
-            },
-            {
-                test: /\.scss$/,
-                use: [
-                    "style-loader", // creates style nodes from JS strings
-                    "css-loader", // translates CSS into CommonJS
-                    "resolve-url-loader", // fixes issue where webpack can't use css background images
-                    "sass-loader" // compiles Sass to CSS, using Node Sass by default
-                ],
-            },
-            {
-                // fixes issue where webpack can't use css background images
-                test: /\.svg$/,
-                use: {
-                    loader: 'file-loader',
-                    options: {
-                        name: '../images/[name].[ext]'
-                    }
-                }
-            }
-        ]
+      rules: [{
+        loader: 'babel-loader',
+        test: /\.js$/,
+        exclude: /node_modules/
+      },
+      {
+        test: /\.scss$/,
+        // use: [
+        //   "style-loader", // ! This should be dev only, that's what inlines the css. Prod shoul generate the css file.
+        //   "css-loader", 
+        //   "sass-loader" 
+        // ],
+        use: CSSExtract.extract({
+          use: [
+            'css-loader',
+            'sass-loader'
+          ]
+        })
+      }]
     },
+    plugins : [
+      CSSExtract
+    ],
+    devtool: isProduction ? 'source-map' : 'cheap-module-eval-source-map',
     devServer: {
-        contentBase:path.resolve(__dirname, 'docs'),
-        open: true,
-        publicPath: '/scripts/'
-    },
-    devtool: 'source-map'
+      contentBase: path.join(__dirname, 'docs'),
+      open: true,
+      openPage: '/'
+    }
+  }
 }
-

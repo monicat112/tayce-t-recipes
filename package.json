@@ -1,36 +1,33 @@
 {
-  "name": "tayce-t-recipes",
+  "name": "indecision-app",
   "version": "1.0.0",
-  "description": "",
-  "main": "input.js",
-  "scripts": {
-    "open": "http-server -a localhost -p 8080",
-    "dev-server": "webpack-dev-server --mode development",
-    "build:go-live": "surge .\\docs monica-salter.surge.sh",
-    "build": "webpack --mode production && npm run build:go-live"
-  },
-  "author": "",
+  "main": "index.js",
+  "author": "Andrew Mead",
   "license": "MIT",
-  "devDependencies": {
-    "@babel/cli": "^7.0.0",
-    "@babel/core": "^7.0.1",
-    "@babel/polyfill": "^7.0.0",
-    "@babel/preset-env": "^7.0.0",
-    "babel-loader": "^8.0.2",
-    "babel-plugin-transform-object-rest-spread": "^6.26.0",
-    "css-loader": "^1.0.0",
-    "file-loader": "^2.0.0",
-    "node-sass": "^4.9.3",
-    "resolve-url-loader": "^3.0.0",
-    "sass-loader": "^7.1.0",
-    "style-loader": "^0.23.0",
-    "webpack": "^4.18.0",
-    "webpack-cli": "^3.1.0",
-    "webpack-dev-server": "^3.1.8"
+  "scripts": {
+    "serve": "live-server docs/",
+    "build:dev": "webpack",
+    "build:prod": "webpack -p --env production",
+    "dev-server": "webpack-dev-server"
   },
   "dependencies": {
-    "malarkey": "^2.0.2",
-    "normalize.scss": "^0.1.0",
-    "uuid": "^3.3.2"
+    "babel-cli": "6.24.1",
+    "babel-core": "6.25.0",
+    "babel-loader": "7.1.1",
+    "babel-plugin-transform-class-properties": "6.24.1",
+    "babel-preset-env": "1.5.2",
+    "babel-preset-react": "6.24.1",
+    "css-loader": "0.28.4",
+    "extract-text-webpack-plugin": "3.0.0",
+    "live-server": "^1.2.0",
+    "node-sass": "4.5.3",
+    "react": "15.6.1",
+    "react-dom": "15.6.1",
+    "react-modal": "2.2.2",
+    "sass-loader": "6.0.6",
+    "style-loader": "0.18.2",
+    "validator": "8.0.0",
+    "webpack": "3.1.0",
+    "webpack-dev-server": "2.5.1"
   }
 }
