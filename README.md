@@ -12,11 +12,17 @@ A Paper Mario themed recipe app made with vanilla JS.
 
 ## How To
 
-`$ npm run dev-server`  
+Run Dev  
+`$ yarn run build:dev`  
+`$ yarn run dev-server`  
 Runs the dev environment
 
-`$ npm i -g surge`  
-Installs the [surge](https://surge.sh/) CLI globally, otherwise build won't work
+Run Prod  
+`$ yarn run build:prod"`  
+`$ yarn run serve`  
 
-`$ npm run build`  
-Compiles and uploads to the surge url defined in package.json
+## Todo
+
+* Test all dev commands
+* Test all prod commands
+* Make sure everything's working on https://mocasalter.github.io/tayce-t-recipes/

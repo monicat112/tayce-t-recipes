@@ -5,10 +5,10 @@
   "author": "Monica Salter",
   "license": "MIT",
   "scripts": {
-    "serve": "live-server docs/",
     "build:dev": "webpack",
     "build:prod": "webpack -p --env production",
-    "dev-server": "webpack-dev-server"
+    "dev-server": "webpack-dev-server",
+    "serve": "live-server docs/"
   },
   "devDependencies": {
     "@babel/polyfill": "^7.0.0",
