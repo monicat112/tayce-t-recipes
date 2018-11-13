@@ -8,10 +8,14 @@ module.exports = (env) => {
 
   return {
 
-    entry: './src/app.js',
+    entry: {
+        index: ['@babel/polyfill', './src/index.js'],
+        edit: ['@babel/polyfill', './src/edit.js']
+    },
     output: {
-      path: path.join(__dirname, 'docs'),
-      filename: 'bundle.js'
+        //   path: path.join(__dirname, 'docs'),
+      path: path.join(__dirname, 'docs/scripts'),
+      filename: '[name]-bundle.js'
     },
     module: {
       rules: [{
