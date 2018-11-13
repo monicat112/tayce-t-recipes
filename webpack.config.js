@@ -69,7 +69,7 @@ module.exports = (env) => {
         },
         plugins : [
             new MiniCssExtractPlugin({
-                filename: 'docs/[name].css',
+                filename: '../css/[name].css',
             })
         ],
         devtool: isProduction ? 'source-map' : 'cheap-module-eval-source-map',
