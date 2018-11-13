@@ -1,6 +1,8 @@
 # Tayce T. Recipes
 
-A Paper Mario themed recipe app made with vanilla JS.
+A Paper Mario themed recipe app made with vanilla JS
+
+![Tayce T](./docs/images/tayce-t.png)
 
 ## Features
 
@@ -15,7 +17,6 @@ A Paper Mario themed recipe app made with vanilla JS.
 Run Dev  
 `$ yarn run build:dev`  
 `$ yarn run dev-server`  
-Runs the dev environment
 
 Run Prod  
 `$ yarn run build:prod"`  
