@@ -4,7 +4,7 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin')
 // exporting a function https://webpack.js.org/configuration/configuration-types/#exporting-a-function
 module.exports = (env) => {
   const isProduction = env === 'production'
-  const CSSExtract = new ExtractTextPlugin('styles.css')
+  const CSSExtract = new ExtractTextPlugin('../css/styles.css')
 
   return {
 
@@ -18,25 +18,33 @@ module.exports = (env) => {
       filename: '[name]-bundle.js'
     },
     module: {
-      rules: [{
-        loader: 'babel-loader',
-        test: /\.js$/,
-        exclude: /node_modules/
-      },
-      {
-        test: /\.scss$/,
-        // use: [
-        //   "style-loader", // ! This should be dev only, that's what inlines the css. Prod shoul generate the css file.
-        //   "css-loader", 
-        //   "sass-loader" 
-        // ],
-        use: CSSExtract.extract({
-          use: [
-            'css-loader',
-            'sass-loader'
-          ]
-        })
-      }]
+        rules: [
+            {
+                loader: 'babel-loader',
+                test: /\.js$/,
+                exclude: /node_modules/
+            },
+            {
+                test: /\.scss$/,
+                use: CSSExtract.extract({
+                use: [
+                    //   "style-loader", // ! This should be dev only, that's what inlines the css. Prod shoul generate the css file.
+                    'css-loader',
+                    'sass-loader'
+                ]
+                })
+            },
+            {
+                // fixes issue where webpack can't use css background images
+                test: /\.svg$/,
+                use: {
+                    loader: 'file-loader',
+                    options: {
+                        name: '../images/[name].[ext]'
+                    }
+                }
+            }
+        ]
     },
     plugins : [
       CSSExtract

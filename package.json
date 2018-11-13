@@ -1,8 +1,8 @@
 {
-  "name": "indecision-app",
+  "name": "tayce-t-recipes",
   "version": "1.0.0",
   "main": "index.js",
-  "author": "Andrew Mead",
+  "author": "Monica Salter",
   "license": "MIT",
   "scripts": {
     "serve": "live-server docs/",
@@ -20,6 +20,7 @@
     "babel-preset-react": "6.24.1",
     "css-loader": "0.28.4",
     "extract-text-webpack-plugin": "3.0.0",
+    "file-loader": "^2.0.0",
     "live-server": "^1.2.0",
     "node-sass": "4.5.3",
     "react": "15.6.1",
