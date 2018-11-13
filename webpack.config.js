@@ -13,7 +13,6 @@ module.exports = (env) => {
         edit: ['@babel/polyfill', './src/edit.js']
     },
     output: {
-        //   path: path.join(__dirname, 'docs'),
       path: path.join(__dirname, 'docs/scripts'),
       filename: '[name]-bundle.js'
     },
@@ -28,7 +27,6 @@ module.exports = (env) => {
                 test: /\.scss$/,
                 use: CSSExtract.extract({
                 use: [
-                    //   "style-loader", // ! This should be dev only, that's what inlines the css. Prod shoul generate the css file.
                     'css-loader',
                     'sass-loader'
                 ]
@@ -52,7 +50,7 @@ module.exports = (env) => {
     devtool: isProduction ? 'source-map' : 'cheap-module-eval-source-map',
     devServer: {
       contentBase: path.join(__dirname, 'docs'),
-      open: true,
+      open: false,
       openPage: '/'
     }
   }
