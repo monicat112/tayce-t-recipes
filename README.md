@@ -1,29 +1,24 @@
+![Tayce T](./docs/images/tayce-t.png)  
+
 # Tayce T. Recipes
 
 A Paper Mario themed recipe app made with vanilla JS
-
-![Tayce T](./docs/images/tayce-t.png)
 
 ## Features
 
 * Changed data auto-reloads on all open tabs
 * Default, reset-able recipe content (local storage data)
-* Image selection
 * Typing text effect using [Malarkey](https://github.com/yuanqing/malarkey)
+* Great recipes
 * CSS animations
+* Image selection
 
 ## How To
 
-Run Dev  
+Dev  
 `$ yarn run build:dev`  
 `$ yarn run dev-server`  
 
-Run Prod  
-`$ yarn run build:prod"`  
+Prod  
+`$ yarn run build:prod`  
 `$ yarn run serve`  
-
-## Todo
-
-* Test all dev commands
-* Test all prod commands
-* Make sure everything's working on https://mocasalter.github.io/tayce-t-recipes/
