@@ -26,7 +26,7 @@ const newSiteVisitor = () => {
 
 const getRootPath = () => {
     let rootPath = '/'
-    if ( location.hostname === "mocasalter.github.io" ) {
+    if ( location.hostname === 'mocasalter.github.io' ) {
         rootPath = location.pathname
     }
     return rootPath

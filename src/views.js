@@ -15,7 +15,7 @@ const generateRecipeCardDOM = (recipe) => {
     const imageLinkEl = document.createElement('a')
     const imageEl = document.createElement('img')
     const recipeButtonEl = document.createElement('a')
-    const recipeLink = `/edit.html#${recipe.id}`
+    const recipeLink = `${getRootPath()}/edit.html#${recipe.id}`
     
     // container
     recipeEl.classList.add('list-box', 'recipe-card')
@@ -80,7 +80,7 @@ const renderRecipes = () => {
     } else {
         const messageEl = document.createElement('p')
         messageEl.classList.add('empty-message')
-        messageEl.textContent = "No recipes."
+        messageEl.textContent = 'No recipes.'
         recipesEl.appendChild(messageEl)
     }
 
@@ -89,8 +89,6 @@ const renderRecipes = () => {
 const renderIngredients = (recipeId) => {
     const recipes = getRecipes()
     const recipe = recipes.find(recipe => recipe.id === recipeId)
-
-    console.log('doing ingredients things')
 
     ingretientsListEl.innerHTML = ''
     
