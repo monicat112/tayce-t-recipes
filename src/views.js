@@ -15,7 +15,7 @@ const generateRecipeCardDOM = (recipe) => {
     const imageLinkEl = document.createElement('a')
     const imageEl = document.createElement('img')
     const recipeButtonEl = document.createElement('a')
-    const recipeLink = `${getRootPath()}/edit.html#${recipe.id}`
+    const recipeLink = `${getRootPath()}edit.html#${recipe.id}`
     
     // container
     recipeEl.classList.add('list-box', 'recipe-card')

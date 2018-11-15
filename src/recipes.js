@@ -2,7 +2,6 @@ import uuidv4 from 'uuid/v4'
 import { Recipe } from './classes'
 import { getDefaultRecipes, imageList } from './default-content'
 
-// demo recipes
 let recipes = []
 
 const loadRecipes = () => {
@@ -27,7 +26,8 @@ const newSiteVisitor = () => {
 const getRootPath = () => {
     let rootPath = '/'
     if ( location.hostname === 'mocasalter.github.io' ) {
-        rootPath = location.pathname
+        const pathList = location.pathname.split('/')
+        rootPath = `/${pathList[1]}/`
     }
     return rootPath
 }
