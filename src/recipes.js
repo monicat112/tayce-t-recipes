@@ -24,6 +24,14 @@ const newSiteVisitor = () => {
     }
 }
 
+const getRootPath = () => {
+    let rootPath = '/'
+    if ( location.hostname === "mocasalter.github.io" ) {
+        rootPath = location.pathname
+    }
+    return rootPath
+}
+
 const createDefaultRecipes = () => {
     recipes = getDefaultRecipes()
     saveRecipes()
@@ -82,4 +90,4 @@ if (newSiteVisitor()) {
 
 loadRecipes()
 
-export { saveRecipes, getRecipes, createRecipe, removeRecipe, updateRecipe, createDefaultRecipes, loadRecipes }
+export { saveRecipes, getRecipes, createRecipe, removeRecipe, updateRecipe, createDefaultRecipes, loadRecipes, getRootPath }

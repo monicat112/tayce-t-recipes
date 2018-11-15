@@ -24,12 +24,22 @@ module.exports = (env) => {
                 exclude: /node_modules/
             },
             {
-                test: /\.scss$/,
+                test: /\.s?css$/,
                 use: CSSExtract.extract({
-                use: [
-                    'css-loader',
-                    'sass-loader'
-                ]
+                    use: [
+                        {
+                            loader: 'css-loader',
+                            options: {
+                                sourceMap: true
+                            }
+                        },
+                        {
+                            loader: 'sass-loader',
+                            options: {
+                                sourceMap: true
+                            }
+                        },
+                    ]
                 })
             },
             {
@@ -47,9 +57,10 @@ module.exports = (env) => {
     plugins : [
       CSSExtract
     ],
-    devtool: isProduction ? 'source-map' : 'cheap-module-eval-source-map',
+    devtool: isProduction ? 'source-map' : 'inline-source-map',
     devServer: {
       contentBase: path.join(__dirname, 'docs'),
+    //   watchContentBase: true,
       open: true,
       openPage: '/'
     }

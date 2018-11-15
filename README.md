@@ -6,10 +6,11 @@ A Paper Mario themed recipe app made with vanilla JS
 
 ## Features
 
+* Uses Webpack & Babel
 * Changed data auto-reloads on all open tabs
 * Default, reset-able recipe content (local storage data)
 * Typing text effect using [Malarkey](https://github.com/yuanqing/malarkey)
-* Great recipes
+* Italian inspired recipes
 * CSS animations
 * Image selection
 

@@ -1,6 +1,6 @@
 import './sass/style.scss'
 import { renderIngredients, initializeEditPage } from './views'
-import { loadRecipes, updateRecipe, removeRecipe } from './recipes'
+import { loadRecipes, updateRecipe, removeRecipe, getRootPath } from './recipes'
 import { createIngredient } from './ingredients'
 import { imageList } from './default-content'
 import { handleFirstTab } from './focus-ring-fix'
@@ -58,7 +58,7 @@ imageSelectEl.addEventListener('change', (e) => {
 deleteBtn.addEventListener('click', (e) => {
     e.preventDefault()
     removeRecipe(recipeId)
-    location.assign(`/`)
+    location.assign(getRootPath())
 })
 
 window.addEventListener('storage', (e) => {

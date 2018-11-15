@@ -1,4 +1,4 @@
-import { getRecipes } from './recipes'
+import { getRecipes, getRootPath } from './recipes'
 import { toggleIngredient, haveIngredients, removeIngredient } from './ingredients'
 import { getFilter } from './filters'
 import { imageList } from './default-content'
@@ -100,8 +100,7 @@ const renderIngredients = (recipeId) => {
     })
 }
 
-const initializeEditPage = (recipeId) => {
-        
+const initializeEditPage = (recipeId) => {  
     const titleEl = document.getElementById('recipe-title')
     const pageTitleEl = document.getElementById('page-title')
     const effectEl = document.getElementById('recipe-effect')
@@ -114,7 +113,7 @@ const initializeEditPage = (recipeId) => {
 
     // if that recipe doesn't exist, go back to the main page
     if (!recipe) {
-        location.assign('/')
+        location.assign(getRootPath())
     }
 
     // set values

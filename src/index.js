@@ -1,5 +1,5 @@
 import './sass/style.scss'
-import { loadRecipes, createRecipe, createDefaultRecipes } from './recipes'
+import { loadRecipes, createRecipe, createDefaultRecipes, getRootPath } from './recipes'
 import { renderRecipes } from './views'
 import { setFilter } from './filters'
 import { tayceTDialogue } from './taycet-type'
@@ -20,7 +20,7 @@ dialogueBtn.addEventListener('click', (e) => {
 newRecipeBtn.addEventListener('click', (e) => {
     e.preventDefault()
     const id = createRecipe()
-    location.assign(`/edit.html#${id}`)
+    location.assign(`${getRootPath()}edit.html#${id}`)
 })
 
 searchEl.addEventListener('input', (e) => {
