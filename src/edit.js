@@ -1,4 +1,3 @@
-import './sass/style.scss'
 import { renderIngredients, initializeEditPage } from './views'
 import { loadRecipes, updateRecipe, removeRecipe, getRootPath } from './recipes'
 import { createIngredient } from './ingredients'

@@ -1,4 +1,3 @@
-import './sass/style.scss'
 import { loadRecipes, createRecipe, createDefaultRecipes, getRootPath } from './recipes'
 import { renderRecipes } from './views'
 import { setFilter } from './filters'

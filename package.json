@@ -23,6 +23,7 @@
     "file-loader": "^2.0.0",
     "live-server": "^1.2.0",
     "node-sass": "4.5.3",
+    "normalize.scss": "^0.1.0",
     "react": "15.6.1",
     "react-dom": "15.6.1",
     "react-modal": "2.2.2",
@@ -33,7 +34,6 @@
   },
   "dependencies": {
     "malarkey": "^2.0.2",
-    "normalize.scss": "^0.1.0",
     "uuid": "^3.3.2"
   }
 }
